@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:52:57 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/19 17:13:16 by wmonacho         ###   ########lyon.fr   */
+/*   Updated: 2023/01/20 14:35:42 by wmonacho         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class PhoneBook
 {
 	private :
 		Contact	_repertory[8];
-		int		_index;
+		size_t		_index;
+		size_t		_repertory_full_check;
 
 	public :
 		PhoneBook(void);
@@ -32,7 +33,8 @@ class PhoneBook
 		void	set_index(void);
 		void	set_contact(Contact *contact);
 		void	ft_display_contact(Contact perso);
-		int		get_index(void);
+		size_t	get_index(void);
+		size_t	get_check(void);
 		
 };
 

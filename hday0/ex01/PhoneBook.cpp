@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:37:21 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/19 17:15:32 by wmonacho         ###   ########lyon.fr   */
+/*   Updated: 2023/01/20 16:40:12 by wmonacho         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook( void )
 {
 	this->_index = 0;
+	this->_repertory_full_check = 0;
 }
 
 PhoneBook::~PhoneBook( void )
@@ -47,28 +48,43 @@ void	PhoneBook::ft_setcontact(void)
 {
 	set_index();
 	set_contact(&(this->_repertory[this->_index]));
-	this->_index += 1;
+	if (this->_index < 8)
+		this->_index += 1;
 }
 
 void	PhoneBook::set_index(void)
 {
 	if (this->_index >= 8)
+	{
 		this->_index = 0;
+		this->_repertory_full_check = 1;
+	}
 }
 
-int	PhoneBook::get_index(void)
+size_t	PhoneBook::get_index(void)
 {
 	return (this->_index);
 }
 
-void	PhoneBook::ft_display_contact(Contact perso)
+size_t	PhoneBook::get_check(void)
 {
-	int	contact_index;
-
-	contact_index = perso.select_contact();
-	if (contact_index < 0)
-		return ;
-	this->_repertory[contact_index].display_contact();
+	return (this->_repertory_full_check);
 }
 
-//faire des fonctions utils
+void	PhoneBook::ft_display_contact(Contact perso)
+{
+	PhoneBook data;
+	size_t	i = 0;
+	if (this->_index == 0)
+	{
+		std::cout << "no contacts added, sorry" << std::endl;
+		return ;
+	}
+	std::cout << "|||||||||||||||||||||||||||||||||||||||||||||||||" << std::endl;
+	while ((i <= this->_index - 1 && this->_repertory_full_check == 0) || (i <= 8 && this->_repertory_full_check == 1))
+	{
+		this->_repertory[i].display_contact(i + 1);
+		i++;
+	}
+	perso.check_contact_selection(this->_index, this->_repertory_full_check, this->_repertory);
+}
