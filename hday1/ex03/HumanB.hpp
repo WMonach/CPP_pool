@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 11:08:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/26 11:39:07 by wmonacho         ###   ########lyon.fr   */
+/*   Created: 2023/01/26 17:49:17 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/01/26 17:53:52 by wmonacho         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_H
+# define HUMANB_H
 
-Zombie::Zombie(void)
-{
-	this->_name = "saucisse";
-}
+#include <iostream>
 
-Zombie::Zombie(std::string name)
+class HumanB
 {
-	this->_name = name;
-}
+	private :
+			std::string	_name;
+			std::string	_weapon;
+	public :
+			HumanB(void);
+			~HumanB(void);
 
-Zombie::~Zombie(void)
-{
-}
+			void	attack(void);
+};
 
-void	Zombie::annouce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

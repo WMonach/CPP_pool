@@ -3,13 +3,11 @@ NAME =		I_did_too_much
 # ================================================
 
 # FILES ==========================================
-FILES =		Zombie.cpp		\
-			main.cpp	\
-			newZombie.cpp		\
+FILES =		main.cpp	\
 # ================================================
 
 # HEADER =========================================
-HEADER =	Zombie.hpp		\
+HEADER =		\
 # ================================================
 
 # FLAGS ==========================================
@@ -33,7 +31,7 @@ all:				$(NAME)
 $(NAME):			$(OBJ)
 					$(CC) $(OBJ) -o $(NAME)
 
-$(OBJS_DIR)/%.o:	%.cpp Makefile $(HEADER) | $(OBJS_DIR)
+$(OBJS_DIR)/%.o:	%.cpp Makefile | $(OBJS_DIR)
 					${CC} ${CFLAGS} -c $< -o $@
 
 $(OBJS_DIR):

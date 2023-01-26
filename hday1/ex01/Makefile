@@ -5,7 +5,7 @@ NAME =		I_did_too_much
 # FILES ==========================================
 FILES =		Zombie.cpp		\
 			main.cpp	\
-			newZombie.cpp		\
+			zombieHorde.cpp		\
 # ================================================
 
 # HEADER =========================================

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 11:08:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/26 11:39:07 by wmonacho         ###   ########lyon.fr   */
+/*   Created: 2023/01/26 14:22:51 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/01/26 14:44:35 by wmonacho         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
-{
-	this->_name = "saucisse";
-}
+Zombie*	zombieHorde( int N, std::string name )
+{	
+	int	i = 0;
 
-Zombie::Zombie(std::string name)
-{
-	this->_name = name;
-}
-
-Zombie::~Zombie(void)
-{
-}
-
-void	Zombie::annouce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	Zombie* horde = new Zombie[N];
+	while (i < N)
+	{
+		horde[i] = name;
+		i++;
+	}
+	return (horde);
 }
