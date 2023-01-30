@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 18:39:28 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/30 14:58:16 by wmonacho         ###   ########lyon.fr   */
+/*   Created: 2023/01/30 17:23:23 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/01/30 17:24:14 by wmonacho         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
-
-HumanB::HumanB(void)
+int	main(int	argc, char **argv)
 {
-}
-
-HumanB::HumanB(std::string name)
-{
-	this->_name = name;
-}
-
-HumanB::~HumanB(void)
-{
-}
-
-void	HumanB::setWeapon(Weapon type)
-{
-	*this->_humanB_weapon = type;
-}
-
-void	HumanB::attack(void)
-{
-	std::cout << this->_name << " attacks with their " << this->_humanB_weapon << std::endl;
+	if (argc != 4)
+		return (0);
+	
 }
