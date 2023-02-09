@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:56:40 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/30 17:09:29 by wmonacho         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 15:18:56 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Weapon::~Weapon(void)
 {
 }
 
-std::string	Weapon::getType(void)
+const std::string	&Weapon::getType(void) const
 {
 	return(this->_type);
 }
