@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:52:15 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/09 18:21:20 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:42:51 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,21 +81,23 @@ Fixed	Fixed::operator-( Fixed const & rhs) const
 {
 	Fixed	result;
 	
-	result = this->_value - rhs._value;
+	result.setRawBits(this->getRawBits() - rhs.getRawBits());
 	return(result);
 }
 
 Fixed	Fixed::operator+( Fixed const & rhs) const
 {
-	Fixed	result(this->_value + rhs._value);
-
+	Fixed	result;
+	
+	result.setRawBits(this->getRawBits() + rhs.getRawBits());
 	return(result);
 }
 
 Fixed	Fixed::operator*( Fixed const & rhs ) const
 {
-	Fixed	result(this->toFloat() * rhs.toFloat());
+	Fixed	result;
 	
+	result.setRawBits((this->getRawBits() * rhs.getRawBits()) >> this->_bit);
 	return(result);
 }
 
@@ -183,7 +185,7 @@ int	Fixed::toInt( void ) const
 int	Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_bit);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits( int const raw)
