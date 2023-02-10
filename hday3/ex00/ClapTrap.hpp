@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:40:42 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/10 15:30:03 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:29:39 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class ClapTrap
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	theEnd( void );
+	void	theEnd( std::string name );
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/10 15:34:53 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:35:04 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ ClapTrap&	ClapTrap::operator=( ClapTrap const & obj)
 	return (*this);
 }
 
+void	ClapTrap::theEnd( std::string action )
+{
+	if (this->_HitPoints <= 0 || this->_EnergyPoints <= 0)
+	{
+		std::cout << this->_Name << " is dead or exhausted and he can't do nothing (maybe he's faking)" << std::endl;
+	}
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
@@ -55,7 +63,7 @@ void	ClapTrap::attack(const std::string& target)
 		this->_EnergyPoints - 1;
 	}
 	else
-		this->_Name.theEnd();
+		theEnd("dead");
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -63,9 +71,10 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
 	{
 		std::cout << this->_Name << " falled and take " << amount << " damage" << std::endl;
+		this->_HitPoints - amount;
 	}
 	else
-		this->_Name.theEnd();
+		theEnd("dead");
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -73,15 +82,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
 	{
 		std::cout << this->_Name << " drink Pastis and gain " << amount << " HitPoints" << std::endl;
+		this->_HitPoints + amount;
+		this->_EnergyPoints - 1;
 	}
 	else
-		this->_Name.theEnd();
-}
-
-void	ClapTrap::theEnd( void )
-{
-	if (this->_HitPoints <= 0 || this->_EnergyPoints <= 0)
-	{
-		std::cout << this->_Name << " is dead or exhausted and he can't do nothing (maybe he's faking)" << std::endl;
-	}
+		theEnd("dead");
 }
