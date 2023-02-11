@@ -1,18 +1,14 @@
 # NAME ===========================================
-NAME =		I_did_too_much
+NAME =		loooooser
 # ================================================
 
 # FILES ==========================================
 FILES =		main.cpp	\
-			Weapon.cpp	\
-			HumanA.cpp	\
-			HumanB.cpp	\
 # ================================================
 
 # HEADER =========================================
-HEADER =	Weapon.hpp	\
-			HumanA.hpp	\
-			HumanB.hpp	\
+HEADER =	\
+
 
 # ================================================
 
@@ -37,7 +33,7 @@ all:				$(NAME)
 $(NAME):			$(OBJ)
 					$(CC) $(OBJ) -o $(NAME)
 
-$(OBJS_DIR)/%.o:	%.cpp Makefile $(HEADER) | $(OBJS_DIR)
+$(OBJS_DIR)/%.o:	%.cpp Makefile | $(OBJS_DIR)
 					${CC} ${CFLAGS} -c $< -o $@
 
 $(OBJS_DIR):
