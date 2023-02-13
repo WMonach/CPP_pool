@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:56:40 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/31 10:12:47 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/11 21:54:07 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Weapon::~Weapon(void)
 {
 }
 
-const std::string &Weapon::getType()
+const std::string	&Weapon::getType(void) const
 {
 	return(this->_type);
 }

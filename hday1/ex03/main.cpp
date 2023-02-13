@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:52:27 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/01/26 18:56:24 by wmonacho         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 15:47:28 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ int	main(void)
 		bob.attack();
 		club.setType("some other type of club");
 		bob.attack();
-	}
-	{
-		Weapon  club = Weapon("crude spiked club");
 
 		HumanB jim("Jim");
-		jim.setWeapon(club);
 		jim.attack();
+		jim.setWeapon(club);
 		club.setType("some other type of club");
 		jim.attack();
 	}
