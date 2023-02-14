@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/13 17:25:00 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/14 15:52:19 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_EnergyPoints = this->_EnergyPoints - 1;
 	}
 	else
-		theEnd("dead");
+		theEnd("dead");	
 }

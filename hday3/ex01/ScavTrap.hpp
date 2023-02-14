@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 11:08:00 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/14 13:46:15 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/14 15:53:13 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/14 19:00:33 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-Zombie*	newZombie(std::string name)
-{
-	Zombie* roulettes = new Zombie(name);
-	return (roulettes);
-}
+# include "ClapTrap.hpp"
 
-void	randomChump( std::string name )
+class ScavTrap: public ClapTrap
 {
-	Zombie mumu(name);
-	mumu.annouce();
+	private :
 	
-}
+	public :
+	ScavTrap( void );
+	ScavTrap( ScavTrap const & obj );
+	~ScavTrap( void );
+	~ScavTrap( void );
+	ScavTrap&	operator=( ScavTrap const & obj);
+	
+	void guardGate( void );
+	
+	protected :
+};
+
+#endif
