@@ -4,11 +4,13 @@ NAME =		onescav
 
 # FILES ==========================================
 FILES =		ClapTrap.cpp		\
+			ScavTrap.cpp		\
 			main.cpp	\
 # ================================================
 
 # HEADER =========================================
 HEADER =	ClapTrap.hpp		\
+			ScavTrap.hpp		\
 # ================================================
 
 # FLAGS ==========================================
@@ -33,7 +35,7 @@ $(NAME):			$(OBJ)
 					$(CC) $(OBJ) -o $(NAME)
 
 $(OBJS_DIR)/%.o:	%.cpp Makefile $(HEADER) | $(OBJS_DIR)
-					${CC} ${CFLAGS} -c $< -o $@
+					${CC} ${FLAGS} -c $< -o $@
 
 $(OBJS_DIR):
 					mkdir $(OBJS_DIR)

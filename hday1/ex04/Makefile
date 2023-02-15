@@ -33,7 +33,7 @@ $(NAME):			$(OBJ)
 					$(CC) $(OBJ) -o $(NAME)
 
 $(OBJS_DIR)/%.o:	%.cpp Makefile | $(OBJS_DIR)
-					${CC} ${CFLAGS} -c $< -o $@
+					${CC} ${FLAGS} -c $< -o $@
 
 $(OBJS_DIR):
 					mkdir $(OBJS_DIR)

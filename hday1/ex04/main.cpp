@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:23:23 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/11 21:53:44 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/15 13:07:22 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	find_and_replace(std::string file_name, std::string to_find, std::string to_
 {
 	std::string		str;
 	std::string		outfile_name= file_name + ".replace";
-	std::ifstream	input_file(file_name);
-	std::ofstream	output_file(outfile_name);
+	std::ifstream	input_file(file_name.c_str());
+	std::ofstream	output_file(outfile_name.c_str());
 	size_t			index = 0;
 
 	if (to_find.length() == 0 && to_replace.length() == 0)

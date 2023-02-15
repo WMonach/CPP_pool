@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 15:53:13 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 13:48:17 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/15 17:42:20 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/15 17:46:27 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef ANIMAL_H
+# define ANIMAL_H
 
-# include "ClapTrap.hpp"
+#include <iostream>
 
-class ScavTrap: public ClapTrap
+class Animal
 {
 	public :
-	ScavTrap( void );
-	ScavTrap( std::string name );
-	ScavTrap( ScavTrap const & obj );
-	~ScavTrap( void );
-	ScavTrap&	operator=( ScavTrap const & obj);
-	
-	void guardGate( void );
-	void	attack(const std::string& target);
+	Animal( void );
+	Animal( Animal const & obj);
+	virtual ~Animal( void );
 };
 
-#endif
+#ifndef

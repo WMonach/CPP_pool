@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/14 15:52:19 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:19:15 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ClapTrap::theEnd( std::string action )
 {
 	if (this->_HitPoints <= 0 || this->_EnergyPoints <= 0)
 	{
-		std::cout << this->_Name << " is dead or exhausted and he can't do nothing (maybe he's faking)" << std::endl;
+		std::cout << this->_Name << " is " << action << " or exhausted and he can't do nothing (maybe he's faking)" << std::endl;
 	}
 }
 
