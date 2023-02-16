@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:39:28 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/11 21:53:59 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/16 10:30:37 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(void): _humanB_weapon(nullptr)
+HumanB::HumanB(void): _humanB_weapon(NULL)
 {
 }
 
-HumanB::HumanB(std::string name): _humanB_weapon(nullptr)
+HumanB::HumanB(std::string name): _humanB_weapon(NULL)
 {
 	this->_name = name;
 }

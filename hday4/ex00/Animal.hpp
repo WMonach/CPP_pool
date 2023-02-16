@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:42:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 17:46:27 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/16 10:26:09 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ class Animal
 	virtual ~Animal( void );
 };
 
-#ifndef
+#endif
