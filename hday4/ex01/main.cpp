@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:29 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/16 11:12:11 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/16 16:46:08 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Dog.hpp"
 #include "Cat.hpp"
 
-Cat::Cat( void ): type("Cat")
+int	main(void)
 {
-	std::cout << "Cat is born" << std::endl;
-}
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
 
-Cat::Cat( Cat const & obj): Animal()
-{
-	this->type = obj.type;
-}
-
-Cat::~Cat( void )
-{
-	std::cout << "Cat destroyed" << std::endl;
-}
-
-void	Cat::makeSound( void ) const
-{
-	std::cout << "a lambda Cat sound: MIAUR BEAUTIFUL" << std::endl;
-}
-
-Cat&	Cat::operator=( Cat const & obj)
-{
-	this->type = obj.type;
-	return (*this);
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:52:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/09 14:39:20 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/16 10:38:00 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed
 {
 	private :
-	const int	_bit = 8;
+	static const int	_bit = 8;
 	int			_value;
 	
 	public :

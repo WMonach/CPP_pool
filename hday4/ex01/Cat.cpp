@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:29 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:57:35 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,4 @@ Cat::~Cat( void )
 void	Cat::makeSound( void ) const
 {
 	std::cout << "a lambda Cat sound: MIAUR BEAUTIFUL" << std::endl;
-}
-
-Cat&	Cat::operator=( Cat const & obj)
-{
-	this->type = obj.type;
-	return (*this);
 }

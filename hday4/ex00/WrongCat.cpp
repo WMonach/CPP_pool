@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:29 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/16 14:20:49 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/16 17:00:01 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat( void ): type("Cat")
+WrongCat::WrongCat( void ): type("WrongCat")
 {
-	std::cout << "Cat is born" << std::endl;
+	std::cout << "WrongCat is born" << std::endl;
 }
 
-Cat::Cat( Cat const & obj): Animal()
+WrongCat::WrongCat( WrongCat const & obj): WrongAnimal()
 {
 	this->type = obj.type;
+	*this = obj;
 }
 
-Cat::~Cat( void )
+WrongCat::~WrongCat( void )
 {
-	std::cout << "Cat destroyed" << std::endl;
+	std::cout << "WrongCat destroyed" << std::endl;
 }
 
-void	Cat::makeSound( void ) const
+void	WrongCat::makeSound( void ) const
 {
-	std::cout << "a lambda Cat sound: MIAUR BEAUTIFUL" << std::endl;
-}
-
-Cat&	Cat::operator=( Cat const & obj)
-{
-	this->type = obj.type;
-	return (*this);
+	std::cout << "a lambda WrongCat sound: MIAUR BEAUTIFUL" << std::endl;
 }

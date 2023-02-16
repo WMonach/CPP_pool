@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:29 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/16 14:22:30 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/16 17:00:45 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
-Cat::Cat( void ): type("Cat")
-{
-	std::cout << "Cat is born" << std::endl;
-}
+#include <iostream>
 
-Cat::Cat( Cat const & obj): Animal()
+class WrongAnimal
 {
-	this->type = obj.type;
-}
+	protected :
+	std::string	type;
 
-Cat::~Cat( void )
-{
-	std::cout << "Cat destroyed" << std::endl;
-}
+	public :
+	WrongAnimal( void );
+	WrongAnimal( WrongAnimal const & obj);
+	~WrongAnimal( void );
 
-void	Cat::makeSound( void ) const
-{
-	std::cout << "a lambda Cat sound: MIAUR BEAUTIFUL" << std::endl;
-}
+	void	makeSound( void ) const;
+	const std::string&		getType( void ) const;
+	void			setType( std::string tip);
+};
 
-Cat&	Cat::operator=( Cat const & obj)
-{
-	this->type = obj.type;
-	return (*this);
-}
+#endif
