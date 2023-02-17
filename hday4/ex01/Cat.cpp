@@ -22,7 +22,6 @@ Cat::Cat( Cat const & obj): Animal()
 {
 	this->_Brain = obj._Brain;
 	this->type = obj.type;
-	return (*this);
 }
 
 Cat::~Cat( void )
