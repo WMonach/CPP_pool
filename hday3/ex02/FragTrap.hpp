@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:38:54 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 14:39:39 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:09:16 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class FragTrap: public ClapTrap
 	FragTrap&	operator=( FragTrap const & obj);
 	
 	void 	highFivesGuys(void);
-	void	attack(const std::string& target);
 };
 
 #endif

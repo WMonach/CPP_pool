@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:37:53 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 15:01:55 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:13:07 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ FragTrap::FragTrap( void )
 {
 	std::cout << "FragTrap is born" << std::endl;
 	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
+	this->_EnergyPoints = 100;
+	this->_AttackDamage = 30;
 }
 
 FragTrap::FragTrap( std::string name )
@@ -25,8 +25,8 @@ FragTrap::FragTrap( std::string name )
 	std::cout << "FragTrap is born" << std::endl;
 	this->_Name = name;
 	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
+	this->_EnergyPoints = 100;
+	this->_AttackDamage = 30;
 }
 
 FragTrap::FragTrap( FragTrap const & obj ): ClapTrap()
@@ -50,17 +50,6 @@ FragTrap&	FragTrap::operator=( FragTrap const & obj)
 	return (*this);
 }
 
-void	FragTrap::attack(const std::string& target)
-{
-	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
-	{
-		std::cout << this->_Name << " Fart on " << target << std::endl;
-		this->_EnergyPoints = this->_EnergyPoints - 1;
-	}
-	else
-		theEnd("dead");
-}
-
 void	FragTrap::highFivesGuys( void )
 {
 	std::string	No = "";
@@ -68,12 +57,7 @@ void	FragTrap::highFivesGuys( void )
 
 	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
 	{
-		std::cout << "FragTrap ask for an highfive : ";
-		while (No.length() < 1)
-		{	
-			std::getline(std::cin, No);
-			std::cout << "FragTrap ask for an highfive  :";
-		}
+		std::cout << this->_Name << " ask for an highfive, pls ?" << std::endl;
 	}
 	else
 		theEnd("dead");

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:07:31 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 14:35:04 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:54:16 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 ScavTrap::ScavTrap( void )
 {
 	std::cout << "ScavTrap is born" << std::endl;
+	this->_Name = "Default";
 	this->_HitPoints = 100;
 	this->_EnergyPoints = 50;
 	this->_AttackDamage = 20;
 }
 
-ScavTrap::ScavTrap( std::string name )
+ScavTrap::ScavTrap( const std::string &name )
 {
 	std::cout << "ScavTrap is born" << std::endl;
 	this->_Name = name;

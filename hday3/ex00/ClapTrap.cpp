@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 13:19:15 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:39:49 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 ClapTrap::ClapTrap( void )
 {
+	this->_Name = "Default";
 	this->_HitPoints = 10;
 	this->_EnergyPoints = 10;
 	this->_AttackDamage = 0;
 }
 
-ClapTrap::ClapTrap( std::string name )
+ClapTrap::ClapTrap( const std::string & name )
 {
 	this->_Name = name;
 	this->_HitPoints = 10;
@@ -47,11 +48,11 @@ ClapTrap&	ClapTrap::operator=( ClapTrap const & obj)
 	return (*this);
 }
 
-void	ClapTrap::theEnd( std::string action )
+void	ClapTrap::theEnd( const std::string & action )
 {
 	if (this->_HitPoints <= 0 || this->_EnergyPoints <= 0)
 	{
-		std::cout << this->_Name << " is " << action << " or exhausted and he can't do nothing (maybe he's faking)" << std::endl;
+		std::cout << this->_Name << " is " << action << " or exhausted and he can't do nothing (maybe he's faking it)" << std::endl;
 	}
 }
 

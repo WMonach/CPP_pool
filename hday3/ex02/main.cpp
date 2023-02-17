@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:31:27 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 14:59:06 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:10:23 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	main(void)
 	Jeanguibolle.beRepaired(4);
 	for (int i = 0; i < 60; i++)
 	{
-		Jeangui.beRepaired(4);
 		Jeanguibolle.beRepaired(4);
 	}
 	return (0);

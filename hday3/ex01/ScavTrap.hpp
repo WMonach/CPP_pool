@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:53:13 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 13:48:17 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:53:45 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class ScavTrap: public ClapTrap
 {
 	public :
 	ScavTrap( void );
-	ScavTrap( std::string name );
+	ScavTrap( const std::string &name );
 	ScavTrap( ScavTrap const & obj );
 	~ScavTrap( void );
 	ScavTrap&	operator=( ScavTrap const & obj);

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:53:13 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 13:48:17 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:13:25 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ScavTrap: public ClapTrap
 	~ScavTrap( void );
 	ScavTrap&	operator=( ScavTrap const & obj);
 	
-	void guardGate( void );
+	void	guardGate( void );
 	void	attack(const std::string& target);
 };
 
