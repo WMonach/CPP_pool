@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:44:42 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 15:31:35 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:15:27 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class Brain
 {
 	private :
-	std::string	ideas[100];
 	
 	public :
+	std::string	ideas[100];
 	Brain( void );
 	Brain( Brain const & obj );
 	~Brain( void );
