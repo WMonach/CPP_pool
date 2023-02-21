@@ -9,7 +9,6 @@ FILES =		Animal.cpp		\
 			main.cpp	\
 			Cat.cpp		\
 			Dog.cpp		\
-			Brain.cpp	\
 # ================================================
 
 # HEADER =========================================
@@ -18,7 +17,6 @@ HEADER =	Animal.hpp		\
 			WrongAnimal.hpp	\
 			Cat.hpp		\
 			Dog.hpp		\
-			Brain.hpp	\
 # ================================================
 
 # FLAGS ==========================================

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:50:37 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/16 14:20:49 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/16 14:33:34 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "WrongCat.hpp"
 
-#include <iostream>
-
-#define NumberOfAnimals 4
-
-class Animal
+WrongCat::WrongCat( void ): type("WrongCat")
 {
-	protected :
-	std::string	type;
+	std::cout << "WrongCat is born" << std::endl;
+}
 
-	public :
-	Animal( void );
-	Animal( Animal const & obj);
-	virtual ~Animal( void );
-	Animal&	operator=( Animal const & obj);
-	virtual void	makeSound( void ) const;
-	const std::string&		getType( void ) const;
-	void			setType( std::string tip);
-};
+WrongCat::WrongCat( WrongCat const & obj): WrongAnimal()
+{
+	this->type = obj.type;
+	*this = obj;
+}
 
-#endif
+WrongCat::~WrongCat( void )
+{
+	std::cout << "WrongCat destroyed" << std::endl;
+}
+
+void	WrongCat::makeSound( void )
+{
+	std::cout << "a lambda WrongCat sound: MIAUR BEAUTIFUL" << std::endl;
+}

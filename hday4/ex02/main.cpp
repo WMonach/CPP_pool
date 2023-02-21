@@ -29,8 +29,6 @@ int	main(void)
 	{
 		AnimalPack[i++] = new Cat();
 	}
-	(AnimalPack[NumberOfAnimals / 4])->setIdeas(10, "I'm alive?");
-	std::cout << (AnimalPack[NumberOfAnimals / 4])->getIdea(10) << std::endl;
 	while (i > 0)
 	{
 		delete AnimalPack[--i];

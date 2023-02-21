@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-#define NumberOfAnimals 4
+#define NumberOfAnimals 10
 
 class Animal
 {
@@ -27,7 +27,7 @@ class Animal
 	Animal( Animal const & obj);
 	virtual ~Animal( void );
 	Animal&	operator=( Animal const & obj);
-	virtual void	makeSound( void ) const;
+	virtual void	makeSound( void ) const = 0;
 	const std::string&		getType( void ) const;
 	void			setType( std::string tip);
 };

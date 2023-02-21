@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:42:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:50:37 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/16 14:22:30 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/16 17:00:45 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
 #include <iostream>
 
-#define NumberOfAnimals 4
-
-class Animal
+class WrongAnimal
 {
 	protected :
 	std::string	type;
 
 	public :
-	Animal( void );
-	Animal( Animal const & obj);
-	virtual ~Animal( void );
-	Animal&	operator=( Animal const & obj);
-	virtual void	makeSound( void ) const;
+	WrongAnimal( void );
+	WrongAnimal( WrongAnimal const & obj);
+	~WrongAnimal( void );
+
+	void	makeSound( void ) const;
 	const std::string&		getType( void ) const;
 	void			setType( std::string tip);
 };
