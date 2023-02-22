@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:44:36 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 14:56:06 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:42:57 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ class Dog: public Animal
 {
 	private :
 	Brain*	_Brain;
-	
-	protected :
-	std::string	type;
 	
 	public :
 	Dog( void );

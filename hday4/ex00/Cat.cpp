@@ -6,20 +6,21 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:29 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:52:20 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat( void ): type("Cat")
+Cat::Cat( void )
 {
+	this->type = "Cat";
 	std::cout << "Cat is born" << std::endl;
 }
 
 Cat::Cat( Cat const & obj): Animal()
 {
-	this->type = obj.type;
+	*this = obj;
 }
 
 Cat::~Cat( void )

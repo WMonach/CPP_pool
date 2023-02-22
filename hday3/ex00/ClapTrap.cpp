@@ -14,6 +14,7 @@
 
 ClapTrap::ClapTrap( void )
 {
+	std::cout << "ClapTrap Constructor" << std::endl;
 	this->_Name = "Default";
 	this->_HitPoints = 10;
 	this->_EnergyPoints = 10;
@@ -22,6 +23,7 @@ ClapTrap::ClapTrap( void )
 
 ClapTrap::ClapTrap( const std::string & name )
 {
+	std::cout << "ClapTrap Constructor" << std::endl;
 	this->_Name = name;
 	this->_HitPoints = 10;
 	this->_EnergyPoints = 10;
@@ -38,6 +40,7 @@ ClapTrap::ClapTrap( ClapTrap const & obj )
 
 ClapTrap::~ClapTrap( void )
 {
+	std::cout << "ClapTrap Destructor" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=( ClapTrap const & obj)
