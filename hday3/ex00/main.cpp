@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:31:27 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 13:41:37 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:15:55 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(void)
 {
 	ClapTrap Jeangui("Jeangui");
 
-	Jeangui.attack("Handsome Jack");
 	Jeangui.attack("Handsome Jack");
 	Jeangui.takeDamage(6);
 	Jeangui.beRepaired(4);
