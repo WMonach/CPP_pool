@@ -6,9 +6,12 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/22 22:27:22 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/22 22:44:18 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
 
 #include <iostream>
 
@@ -49,3 +52,5 @@ class Bureaucrat
 		void		promotion( void );
 };
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const & rhs);
+
+#endif
