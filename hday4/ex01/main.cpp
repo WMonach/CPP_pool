@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:12:11 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:46:08 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:49:31 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,17 @@ int	main(void)
 	{
 		AnimalPack[i++] = new Cat();
 	}
-	(AnimalPack[NumberOfAnimals / 4])->setIdeas(10, "I'm alive?");
-	std::cout << (AnimalPack[NumberOfAnimals / 4])->getIdea(10) << std::endl;
+
 	while (i > 0)
 	{
 		delete AnimalPack[--i];
 	}
+	std::cout << "================================================" << std::endl;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+	std::cout << "================================================" << std::endl;
+	std::cout << "================================================" << std::endl;
 	return 0;
 }

@@ -52,9 +52,6 @@ FragTrap&	FragTrap::operator=( FragTrap const & obj)
 
 void	FragTrap::highFivesGuys( void )
 {
-	std::string	No = "";
-
-
 	if (this->_EnergyPoints > 0 && this->_HitPoints > 0)
 	{
 		std::cout << this->_Name << " ask for an highfive, pls ?" << std::endl;

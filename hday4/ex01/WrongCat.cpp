@@ -6,14 +6,15 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:20:49 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 14:33:34 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:43:34 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat( void ): type("WrongCat")
+WrongCat::WrongCat( void )
 {
+	this->type = "WrongCat";
 	std::cout << "WrongCat is born" << std::endl;
 }
 

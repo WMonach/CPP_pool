@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:44:36 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:54:29 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:39:39 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class Dog: public Animal
 {
-	protected :
-	std::string	type;
-	
 	public :
 	Dog( void );
 	Dog( Dog const & obj);

@@ -6,20 +6,21 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:10:57 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:34 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:50:52 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ): type("Dog")
+Dog::Dog( void )
 {
+	this->type = "Dog";
 	std::cout << "Dog is born" << std::endl;
 }
 
-Dog::Dog( Dog const & obj): Animal()
+Dog::Dog( Dog const & obj) : Animal()
 {
-	this->type = obj.type;
+	*this = obj;
 }
 
 Dog::~Dog( void )

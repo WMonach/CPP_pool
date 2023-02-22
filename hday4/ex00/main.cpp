@@ -30,5 +30,9 @@ int	main(void)
 	j->makeSound();
 	k->makeSound();
 	meta->makeSound();
+	delete k;
+	delete i;
+	delete j;
+	delete meta;
 	return 0;
 }
