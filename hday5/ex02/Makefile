@@ -1,22 +1,23 @@
 # NAME ===========================================
-NAME =		polyly
+NAME =		NiceOrganisation
 # ================================================
 
 # FILES ==========================================
-FILES =		Animal.cpp		\
-			WrongCat.cpp	\
-			WrongAnimal.cpp	\
-			main.cpp	\
-			Cat.cpp		\
-			Dog.cpp		\
+FILES =		Bureaucrat.cpp	\
+			main.cpp		\
+			Form.cpp		\
+			RobotomyRequestForm.hpp  \
+			PresidentialPardonForm.hpp \
+			ShrubberyCreationForm.hpp \
 # ================================================
 
 # HEADER =========================================
-HEADER =	Animal.hpp		\
-			WrongCat.hpp	\
-			WrongAnimal.hpp	\
-			Cat.hpp		\
-			Dog.hpp		\
+HEADER =	Bureaucrat.hpp	\
+			Form.hpp		\
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp  \
+			ShrubberyCreationForm.cpp \
+
 # ================================================
 
 # FLAGS ==========================================

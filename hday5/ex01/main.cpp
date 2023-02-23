@@ -3,17 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/22 22:30:04 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/23 19:04:40 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
+    Form    Infos("GummyBearContrat", 40, 80);
+    
+    std::cout << Infos << std::endl;
+    
     try {
         Bureaucrat lol("Jerome_Powell", 155);
     }
@@ -21,39 +26,42 @@ int main(void)
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << "================" << std::endl;
+    try {
+        Form lol("GummyBearContrat", 155, 1);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "================" << std::endl;
 	try {
 		Bureaucrat In_Coke("Jerome_Powell", 20);
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.retrograde();
+        Form lol("GummyBearContrat", 40, 80);
+        In_Coke.signForm(lol);
+        In_Coke.signForm(lol);
     }
     catch (std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-	try {
-		Bureaucrat In_Coke("Jerome_Powell", 2);
-		In_Coke.promotion();
-		In_Coke.promotion();
-		In_Coke.promotion();
-		In_Coke.retrograde();
+    std::cout << "================" << std::endl;
+    try {
+        Bureaucrat In_Coke("Jerome_Powell", 140);
+	    In_Coke.promotion();
+	    In_Coke.promotion();
+	    In_Coke.promotion();
+	    In_Coke.retrograde();
+        Form lol("GummyBearContrat", 40, 80);
+        In_Coke.signForm(lol);
     }
     catch (std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
-    }
-	try {
-		Bureaucrat In_Coke("Jerome_Powell", 148);
-		In_Coke.promotion();
-		In_Coke.retrograde();
-		In_Coke.retrograde();
-		In_Coke.retrograde();
-		In_Coke.retrograde();
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
+       std::cerr << e.what() << std::endl;
     }
     return (0);
 }
