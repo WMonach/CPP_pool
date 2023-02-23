@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:31 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:27:25 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/23 20:28:38 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTTOMYREQUESTFORM_H
 # define ROBOTTOMYREQUESTFORM_H
 
-class Form;
+#include "Form.hpp"
 
 class RobotomyRequestForm: public Form
 {

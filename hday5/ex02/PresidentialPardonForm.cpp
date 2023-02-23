@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:06 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:21:18 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/23 20:29:06 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm( void )
 {

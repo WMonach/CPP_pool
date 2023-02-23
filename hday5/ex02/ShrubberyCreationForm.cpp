@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:09:02 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:21:44 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:35:33 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-ShrubberyCreationForm::ShrubberyCreationForm( void )
+#include "ShrubberyCreationForm.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm( void ): Form("ShrubberyCreationForm", 145, 137), _Target("")
 {
 
 }

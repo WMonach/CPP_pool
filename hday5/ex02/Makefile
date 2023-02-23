@@ -3,20 +3,20 @@ NAME =		NiceOrganisation
 # ================================================
 
 # FILES ==========================================
-FILES =		Bureaucrat.cpp	\
-			main.cpp		\
-			Form.cpp		\
-			RobotomyRequestForm.hpp  \
-			PresidentialPardonForm.hpp \
-			ShrubberyCreationForm.hpp \
+FILES =		Bureaucrat.cpp				\
+			main.cpp					\
+			Form.cpp					\
+			RobotomyRequestForm.cpp		\
+			PresidentialPardonForm.cpp	\
+			ShrubberyCreationForm.cpp	\
 # ================================================
 
 # HEADER =========================================
-HEADER =	Bureaucrat.hpp	\
-			Form.hpp		\
-			PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp  \
-			ShrubberyCreationForm.cpp \
+HEADER =	Bureaucrat.hpp				\
+			Form.hpp					\
+			PresidentialPardonForm.hpp	\
+			RobotomyRequestForm.hpp  	\
+			ShrubberyCreationForm.hpp 	\
 
 # ================================================
 

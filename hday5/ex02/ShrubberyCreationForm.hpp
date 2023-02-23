@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:30:25 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/23 20:28:42 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_H
 # define SHRUBBERYCREATIONFORM_H
 
-class Form;
+#include "Form.hpp"
 
 class ShrubberyCreationForm: public Form
 {

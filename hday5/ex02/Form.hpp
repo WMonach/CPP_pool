@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:32:29 by will              #+#    #+#             */
-/*   Updated: 2023/02/23 18:46:17 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:32:21 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ class Form
 		Form( void );
 		Form( std::string name, const int gradeToSign, const int gradeToExecute );
 		Form( Form const & rhs);
-		~Form( void );
+		virtual ~Form( void );
 		const Form& operator=( Form const & rhs);
-        void    beSigned( const Bureaucrat &employee );
+        virtual void    beSigned( const Bureaucrat &employee ) = 0;
         bool    getSignature( void ) const;
         const std::string   getName( void ) const;
         int   getGradeToSign( void ) const;
