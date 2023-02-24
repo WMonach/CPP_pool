@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:21:19 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 15:24:17 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:57:31 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Brain::Brain( void )
 
 Brain::Brain( Brain const & obj)
 {
+    std::cout << "New Brain created" << std::endl;
    *this = obj;
 }
 

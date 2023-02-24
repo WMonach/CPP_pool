@@ -1,22 +1,30 @@
+#  _____   _       ___  ___   _____   _____   _____   _____    _____   _   _   _____   _____   _           ___   __   _   _____   _____  
+# |_   _| | |     /   |/   | | ____| |  ___| /  _  \ |  _  \  |_   _| | | | | | ____| |  _  \ | |         /   | |  \ | | | ____| |_   _| 
+#   | |   | |    / /|   /| | | |__   | |__   | | | | | |_| |    | |   | |_| | | |__   | |_| | | |        / /| | |   \| | | |__     | |   
+#   | |   | |   / / |__/ | | |  __|  |  __|  | | | | |  _  /    | |   |  _  | |  __|  |  ___/ | |       / / | | | |\   | |  __|    | |   
+#   | |   | |  / /       | | | |___  | |     | |_| | | | \ \    | |   | | | | | |___  | |     | |___   / /  | | | | \  | | |___    | |   
+#   |_|   |_| /_/        |_| |_____| |_|     \_____/ |_|  \_\   |_|   |_| |_| |_____| |_|     |_____| /_/   |_| |_|  \_| |_____|   |_|   
+
+
 # NAME ===========================================
-NAME =		NiceOrganisation
+NAME =		TimeForThePlanet
 # ================================================
 
 # FILES ==========================================
 FILES =		Bureaucrat.cpp				\
 			main.cpp					\
 			Form.cpp					\
-			RobotomyRequestForm.cpp		\
-			PresidentialPardonForm.cpp	\
 			ShrubberyCreationForm.cpp	\
+			# RobotomyRequestForm.cpp		\
+			# PresidentialPardonForm.cpp	\
 # ================================================
 
 # HEADER =========================================
 HEADER =	Bureaucrat.hpp				\
 			Form.hpp					\
-			PresidentialPardonForm.hpp	\
-			RobotomyRequestForm.hpp  	\
 			ShrubberyCreationForm.hpp 	\
+			# PresidentialPardonForm.hpp	\
+			# RobotomyRequestForm.hpp  	\
 
 # ================================================
 
@@ -59,55 +67,9 @@ re :				fclean all
 
 .PHONY:				all clean fclean re
 
-# NAME =		megaphone
-
-# CFLAGS =	-Wall -Wextra -Werror
-
-# CC =		c++
-
-# CRASH = -fsanitize=address -g3
-
-# DIR_OBJ =	.object
-
-# SUB_DIR_LST =.
-
-# MD := mkdir -p
-
-# DIR_SRC := src#.
-
-# FILE_EXT := .cpp
-
-# OBJ			=		$(addprefix $(DIR_OBJ)/, $(addsuffix .o,$(INC_FILES)))
-
-# SUB_DIR=			$(addprefix $(DIR_OBJ)/,$(SUB_DIR_LST))
-
-# INC_FILES	=		megaphone	\
-
-# all: 				$(NAME)
-
-
-# $(NAME):			$(OBJ)
-# 					$(CC) $(OBJ) -o $(NAME)
-	
-# $(DIR_OBJ)/%.o:		$(DIR_SRC)/%$(FILE_EXT) Makefile | $(SUB_DIR)
-# 					${CC} ${CFLAGS} -c $< -o $@
-
-# $(SUB_DIR) :
-# 					$(MD) $@
-
-
-# norme :
-# 					norminette
-
-# clean :
-# 					rm -f ${OBJ} ${OBJ_B} $(OBJS_DIR)/*.o 
-# 					rm -rf $(OBJS_DIR)
-
-# fclean :
-# 					rm -f ${OBJ} ${OBJ_B} $(OBJS_DIR)/*.o
-# 					rm -f ${NAME}
-# 					rm -rf $(OBJS_DIR)
-
-# re :				fclean all
-
-# .PHONY:				all clean fclean libs re objs obj bonus
+#  _____   _       ___  ___   _____   _____   _____   _____    _____   _   _   _____   _____   _           ___   __   _   _____   _____  
+# |_   _| | |     /   |/   | | ____| |  ___| /  _  \ |  _  \  |_   _| | | | | | ____| |  _  \ | |         /   | |  \ | | | ____| |_   _| 
+#   | |   | |    / /|   /| | | |__   | |__   | | | | | |_| |    | |   | |_| | | |__   | |_| | | |        / /| | |   \| | | |__     | |   
+#   | |   | |   / / |__/ | | |  __|  |  __|  | | | | |  _  /    | |   |  _  | |  __|  |  ___/ | |       / / | | | |\   | |  __|    | |   
+#   | |   | |  / /       | | | |___  | |     | |_| | | | \ \    | |   | | | | | |___  | |     | |___   / /  | | | | \  | | |___    | |   
+#   |_|   |_| /_/        |_| |_____| |_|     \_____/ |_|  \_\   |_|   |_| |_| |_____| |_|     |_____| /_/   |_| |_|  \_| |_____|   |_|   

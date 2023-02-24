@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:07:31 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 13:54:16 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:48:47 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ScavTrap::ScavTrap( const std::string &name )
 
 ScavTrap::ScavTrap( ScavTrap const & obj ): ClapTrap()
 {
+	std::cout << "ScavTrap is born" << std::endl;
 	this->_HitPoints = obj._HitPoints;
 	this->_EnergyPoints = obj._EnergyPoints;
 	this->_AttackDamage = obj._AttackDamage;

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:10:25 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/22 16:47:31 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:57:37 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat( void )
 
 Cat::Cat( Cat const & obj): Animal()
 {
+	std::cout << "Cat is born" << std::endl;
 	this->_Brain = new Brain(*(obj.getBrain()));
 	this->type = obj.type;
 }

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 18:57:45 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:36:13 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	Bureaucrat::retrograde( void )
 	this->_Grade = this->_Grade + 1;;
 }
 
-void    Bureaucrat::signForm( Form Contrat) const
+void    Bureaucrat::signForm( Form &Contrat) const
 {
 
     try {

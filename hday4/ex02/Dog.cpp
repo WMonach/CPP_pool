@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:10:57 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/22 16:47:51 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:57:44 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Dog::Dog( void )
 
 Dog::Dog( Dog const & obj): Animal()
 {
+	std::cout << "Dog is born" << std::endl;
 	this->_Brain = new Brain(*(obj.getBrain()));
 	this->type = obj.type;
 }

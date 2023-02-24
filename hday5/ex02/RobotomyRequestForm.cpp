@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 20:29:24 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 11:31:37 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( void )
+RobotomyRequestForm::RobotomyRequestForm( void ): Form("RobotomyRequestForm", 72, 45), _Target("")
 {
 
 }

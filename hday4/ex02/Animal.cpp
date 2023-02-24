@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:41:50 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 17:10:03 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:57:26 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Animal::Animal( void ): type("")
 
 Animal::Animal( Animal const & obj)
 {
+	std::cout << "Animal is created" << std::endl;
 	this->type = obj.type;
 	*this = obj;
 }

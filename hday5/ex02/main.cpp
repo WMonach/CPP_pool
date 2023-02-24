@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:32:29 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:49:20 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,14 @@
 
 int main(void)
 {
-    Form    Infos("GummyBearContrat", 40, 80);
-    
-    std::cout << Infos << std::endl;
-    
-    try {
-        Bureaucrat lol("Jerome_Powell", 155);
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+    // try {
+    //     Bureaucrat lol("Jerome_Powell", 155);
+    // }
+    // catch (std::exception& e)
+    // {
+    //     std::cerr << e.what() << std::endl;
+    // }
     std::cout << "================" << std::endl;
-    try {
-        Form lol("GummyBearContrat", 155, 1);
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
     std::cout << "================" << std::endl;
 	try {
 		Bureaucrat In_Coke("Jerome_Powell", 20);
@@ -42,9 +31,10 @@ int main(void)
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.retrograde();
-        Form lol("GummyBearContrat", 40, 80);
-        In_Coke.signForm(lol);
-        In_Coke.signForm(lol);
+        const Form  *Planet;
+        ShrubberyCreationForm lol("TimeForThePlanet");
+        // In_Coke.signForm(lol);
+        // In_Coke.signForm(lol);
     }
     catch (std::exception& e)
     {
@@ -57,8 +47,8 @@ int main(void)
 	    In_Coke.promotion();
 	    In_Coke.promotion();
 	    In_Coke.retrograde();
-        Form lol("GummyBearContrat", 40, 80);
-        In_Coke.signForm(lol);
+        // Form lol("TimeForThePlanet");
+        // In_Coke.signForm(lol);
     }
     catch (std::exception& e)
     {

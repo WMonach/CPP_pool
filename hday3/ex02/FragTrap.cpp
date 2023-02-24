@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:37:53 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/17 14:13:07 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:49:50 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ FragTrap::FragTrap( std::string name )
 
 FragTrap::FragTrap( FragTrap const & obj ): ClapTrap()
 {
+	std::cout << "FragTrap is born" << std::endl;
 	this->_HitPoints = obj._HitPoints;
 	this->_EnergyPoints = obj._EnergyPoints;
 	this->_AttackDamage = obj._AttackDamage;

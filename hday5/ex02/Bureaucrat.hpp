@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 15:15:09 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:35:56 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <stdexcept>
 class Form;
+class ShrubberyCreationForm;
 
 class Bureaucrat
 {
@@ -52,7 +53,7 @@ class Bureaucrat
         unsigned int   getGrade( void ) const;
         void		retrograde( void );
 		void		promotion( void );
-        void        signForm( Form Contrat) const;
+        void        signForm( Form &Contrat) const;
 };
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const & rhs);
 

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:23:22 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/16 17:10:39 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:57:50 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ WrongAnimal::WrongAnimal( void ): type("")
 
 WrongAnimal::WrongAnimal( WrongAnimal const & obj): type(NULL)
 {
+	std::cout << "WrongAnimal is created" << std::endl;
 	this->type = obj.type;
 	*this = obj;
 }
