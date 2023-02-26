@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 14:35:56 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:17:57 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat
     
     private :
         const std::string   _Name;
-        unsigned int        _Grade;
+        int        _Grade;
     
     public :
         Bureaucrat( void );
@@ -50,7 +50,7 @@ class Bureaucrat
         ~Bureaucrat( void );
         const Bureaucrat& operator=( Bureaucrat const & rhs);
         const std::string& getName( void ) const;
-        unsigned int   getGrade( void ) const;
+        int			getGrade( void ) const;
         void		retrograde( void );
 		void		promotion( void );
         void        signForm( Form &Contrat) const;

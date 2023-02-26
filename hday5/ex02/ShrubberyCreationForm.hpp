@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 16:47:14 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:37:48 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 class ShrubberyCreationForm: public Form
 {
 	private :
-	const 
-	std::string	_Target;
+	const std::string	_Target;
 
 	public :
 	ShrubberyCreationForm( void );
@@ -28,7 +27,7 @@ class ShrubberyCreationForm: public Form
 	~ShrubberyCreationForm( void );
 	const ShrubberyCreationForm& operator=( ShrubberyCreationForm const & rhs);
 	std::string	getTarget( void ) const;
-	void	execute( void ) const;
+	virtual void	execute( const Bureaucrat &intern ) const;
 };
 
 #endif

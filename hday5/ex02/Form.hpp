@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:32:29 by will              #+#    #+#             */
-/*   Updated: 2023/02/23 21:32:21 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/26 21:16:56 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ class Form
 		Form( Form const & rhs);
 		virtual ~Form( void );
 		const Form& operator=( Form const & rhs);
-        virtual void    beSigned( const Bureaucrat &employee ) = 0;
+        virtual void    beSigned( const Bureaucrat &employee );
         bool    getSignature( void ) const;
         const std::string   getName( void ) const;
         int   getGradeToSign( void ) const;
         int   getExecutionGrade( void ) const;
+		virtual void	execute( const Bureaucrat &intern ) const = 0;
 };
 
 std::ostream	&operator<<( std::ostream & o, Form const & rhs);

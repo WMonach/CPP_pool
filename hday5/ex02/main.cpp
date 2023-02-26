@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 16:49:20 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:16:38 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
@@ -25,14 +26,15 @@ int main(void)
     // }
     std::cout << "================" << std::endl;
     std::cout << "================" << std::endl;
+	Form	*form = NULL;
 	try {
 		Bureaucrat In_Coke("Jerome_Powell", 20);
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.retrograde();
-        const Form  *Planet;
-        ShrubberyCreationForm lol("TimeForThePlanet");
+        form = new ShrubberyCreationForm("TimeForThePlanet");
+		form->execute(In_Coke);
         // In_Coke.signForm(lol);
         // In_Coke.signForm(lol);
     }

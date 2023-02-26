@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 14:36:13 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:18:14 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std::string& Bureaucrat::getName( void ) const
     return(this->_Name);
 }
 
-unsigned int Bureaucrat::getGrade( void ) const
+int Bureaucrat::getGrade( void ) const
 {
     return(this->_Grade);
 }
