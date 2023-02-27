@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:01 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 17:57:24 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 18:03:39 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PRESIDENTIALPARDONFORM_H
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 class PresidentialPardonForm: public Form
 {

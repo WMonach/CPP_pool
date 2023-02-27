@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/26 21:17:57 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 18:06:57 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ class Bureaucrat
         void		retrograde( void );
 		void		promotion( void );
         void        signForm( Form &Contrat) const;
+		void		executeForm(Form const & form);
 };
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const & rhs);
 

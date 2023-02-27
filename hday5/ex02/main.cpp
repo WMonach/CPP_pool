@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 17:21:39 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 19:00:45 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 #include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
-    // try {
-    //     Bureaucrat lol("Jerome_Powell", 155);
-    // }
-    // catch (std::exception& e)
-    // {
-    //     std::cerr << e.what() << std::endl;
-    // }
-    std::cout << "================" << std::endl;
-    std::cout << "================" << std::endl;
+	Bureaucrat InCoke("Jerome_Powell", 60);
+	Bureaucrat NoTime("GeorgeDeLaCompta", 35);
+	Bureaucrat NeedToSleep("Intern", 120);
+	Bureaucrat DoNothing("Trash", 150);
 	Form	*form = NULL;
+
 	try {
-		Bureaucrat In_Coke("Jerome_Powell", 20);
-		In_Coke.promotion();
-		In_Coke.promotion();
-		In_Coke.promotion();
-		In_Coke.retrograde();
+		InCoke.promotion();
+		InCoke.retrograde();
         form = new RobotomyRequestForm("TimeForThePlanet");
-		form->execute(In_Coke);
-        // In_Coke.signForm(lol);
-        // In_Coke.signForm(lol);
+		form->beSigned(InCoke);
+		form->execute(InCoke);
     }
     catch (std::exception& e)
     {
@@ -44,13 +37,10 @@ int main(void)
     }
     std::cout << "================" << std::endl;
     try {
-        Bureaucrat In_Coke("Jerome_Powell", 140);
-	    In_Coke.promotion();
-	    In_Coke.promotion();
-	    In_Coke.promotion();
-	    In_Coke.retrograde();
-        // Form lol("TimeForThePlanet");
-        // In_Coke.signForm(lol);
+	    InCoke.promotion();
+	    InCoke.promotion();
+	    InCoke.promotion();
+	    InCoke.retrograde();
     }
     catch (std::exception& e)
     {

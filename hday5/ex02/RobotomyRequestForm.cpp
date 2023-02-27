@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 17:51:40 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 18:53:22 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,12 @@ const RobotomyRequestForm&	RobotomyRequestForm::operator=( RobotomyRequestForm c
 
 void	RobotomyRequestForm::execute( const Bureaucrat &employee) const
 {
-	if (employee.getGrade() < this->getExecutionGrade())
+	try
 	{
+		if (employee.getGrade() > this->getExecutionGrade())
+			throw(Form::GradeTooLowException());
+		if (this->getSignature() == 0)
+			throw(Form::NotSigned());
 		std::cout << " Drilling noise " << std::endl;
 		std::cout << "        ____					" << std::endl;
 		std::cout << " _    +(____)+					" << std::endl;
@@ -70,5 +74,9 @@ void	RobotomyRequestForm::execute( const Bureaucrat &employee) const
 		{
 			std::cout << " Failure ! " << this->_Target << "can't be robotized !" << std::endl;
 		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }

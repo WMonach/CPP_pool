@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:32:29 by will              #+#    #+#             */
-/*   Updated: 2023/02/26 21:16:56 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 18:51:59 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,15 @@ class Form
         public :
             virtual const char* what() const throw()
             {
-                return ("Contrat for gummy bear already signed");
+                return ("Contrat already signed");
+            }
+        };
+		class NotSigned : public std::exception
+        {
+        public :
+            virtual const char* what() const throw()
+            {
+                return ("Try to execute contrat before signed");
             }
         };
         

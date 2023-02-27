@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/26 21:18:14 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 18:10:39 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,12 @@ void    Bureaucrat::signForm( Form &Contrat) const
     {
         std::cerr << this->_Name << " couldn't sign " << Contrat.getName() << " because " << e.what() << std::endl;
     }   
+}
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	if (form.getSignature())
+		std::cout << this->_Name << " executed " << form.getName() << std::endl;
+	else
+		std::cout << "can't executed this form try again with a better grade trash !" << std::endl;
 }
