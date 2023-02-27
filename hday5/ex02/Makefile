@@ -15,16 +15,16 @@ FILES =		Bureaucrat.cpp				\
 			main.cpp					\
 			Form.cpp					\
 			ShrubberyCreationForm.cpp	\
-			# RobotomyRequestForm.cpp		\
-			# PresidentialPardonForm.cpp	\
+			RobotomyRequestForm.cpp		\
+			PresidentialPardonForm.cpp	\
 # ================================================
 
 # HEADER =========================================
 HEADER =	Bureaucrat.hpp				\
 			Form.hpp					\
 			ShrubberyCreationForm.hpp 	\
-			# PresidentialPardonForm.hpp	\
-			# RobotomyRequestForm.hpp  	\
+			RobotomyRequestForm.hpp  	\
+			PresidentialPardonForm.hpp	\
 
 # ================================================
 

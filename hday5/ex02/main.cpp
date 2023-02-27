@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/26 21:16:38 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 17:21:39 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
 		In_Coke.promotion();
 		In_Coke.promotion();
 		In_Coke.retrograde();
-        form = new ShrubberyCreationForm("TimeForThePlanet");
+        form = new RobotomyRequestForm("TimeForThePlanet");
 		form->execute(In_Coke);
         // In_Coke.signForm(lol);
         // In_Coke.signForm(lol);

@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:09:02 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/26 21:18:37 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/27 16:52:26 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ): Form("Shrubb
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & rhs ): Form()
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & rhs ): Form("ShrubberyCreationForm", 145, 137), _Target(rhs.getTarget())
 {
 	*this = rhs;
 }
