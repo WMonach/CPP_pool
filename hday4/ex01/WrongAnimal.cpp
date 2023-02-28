@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:23:22 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 11:57:08 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:17:46 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,10 @@ const std::string&	WrongAnimal::getType( void ) const
 void	WrongAnimal::setType( std::string tip)
 {
 	this->type = tip;
+}
+
+WrongAnimal&	WrongAnimal::operator=( WrongAnimal const & obj)
+{
+	this->type = obj.type;
+	return (*this);
 }

@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 14:21:33 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/28 11:19:53 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/28 15:02:18 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/28 16:37:30 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-# define WRONGCAT_H
+#include "Main.hpp"
 
-#include "WrongAnimal.hpp"
-
-class WrongCat: public WrongAnimal
+int	main(int argc, char **argv)
 {
-	public :
-	WrongCat( void );
-	WrongCat( WrongCat const & obj);
-	~WrongCat( void );
-	
-	void	makeSound( void );
-	WrongCat&	operator=( WrongCat const & obj);
-};
+	Main	main;
+	if (argc != 2)
+		return (1);
+	main.parsing(argv[1]);
+	return (0);
+}
 
-#endif
+Main::Main( void )
+{
+}
+
+Main::~Main( void )
+{
+}
+
+Main::Main( Main const & rhs)
+{
+	*this = obj;
+}
+
+const Main& Main::operator=( Main const & obj)
+{
+	return (*this);
+}
+
+void	Main::parsing( char *Reprensation )
+{
+	
+}

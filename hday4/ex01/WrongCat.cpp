@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:20:49 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/24 11:57:13 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:15:04 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,10 @@ WrongCat::~WrongCat( void )
 void	WrongCat::makeSound( void )
 {
 	std::cout << "a lambda WrongCat sound: MIAUR BEAUTIFUL" << std::endl;
+}
+
+WrongCat&	WrongCat::operator=( WrongCat const & obj)
+{
+	this->type = obj.type;
+	return (*this);
 }

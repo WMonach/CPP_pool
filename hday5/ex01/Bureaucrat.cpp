@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 18:57:45 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:59:36 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Bureaucrat::Bureaucrat( std::string name, int grade ): _Name(name)
 
 Bureaucrat::Bureaucrat( Bureaucrat const & rhs): _Name(rhs._Name)
 {
+    std::cout << "Bureaucrat is created" << std::endl;
     this->_Grade = rhs._Grade;
 	*this = rhs;
 }

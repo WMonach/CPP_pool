@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 14:21:33 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/28 11:19:53 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/02/28 15:12:33 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/02/28 15:25:49 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-# define WRONGCAT_H
+#ifndef MAIN_H
+#define MAIN_H
 
-#include "WrongAnimal.hpp"
+#include <iostream>
 
-class WrongCat: public WrongAnimal
-{
+Class Main
+{	
 	public :
-	WrongCat( void );
-	WrongCat( WrongCat const & obj);
-	~WrongCat( void );
+	Main(void);
+	~Main(void)
+	Main(Main const & rhs);
+	const Main& operator=(Main const & obj);
+	void	parsing( void );
 	
-	void	makeSound( void );
-	WrongCat&	operator=( WrongCat const & obj);
+	int	TypInt;
+	Float	TypFloat;
+	double	TypDouble;
+	char	*TypChar;
 };
 
 #endif

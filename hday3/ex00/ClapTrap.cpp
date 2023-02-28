@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/20 16:10:01 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/02/28 10:55:01 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ClapTrap::ClapTrap( const std::string & name )
 
 ClapTrap::ClapTrap( ClapTrap const & obj )
 {
+	std::cout << "ClapTrap Constructor" << std::endl;
 	this->_HitPoints = obj._HitPoints;
 	this->_EnergyPoints = obj._EnergyPoints;
 	this->_AttackDamage = obj._AttackDamage;

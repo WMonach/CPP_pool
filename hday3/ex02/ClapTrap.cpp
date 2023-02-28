@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:32:30 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/15 13:55:35 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:55:24 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ ClapTrap::ClapTrap( std::string name )
 
 ClapTrap::ClapTrap( ClapTrap const & obj )
 {
+	std::cout << "ClapTrap Constructor" << std::endl;
 	this->_HitPoints = obj._HitPoints;
 	this->_EnergyPoints = obj._EnergyPoints;
 	this->_AttackDamage = obj._AttackDamage;
