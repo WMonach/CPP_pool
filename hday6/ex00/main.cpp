@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:02:18 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 17:46:13 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:23:41 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ int	main(int argc, char **argv)
 				std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl; 
-			std::cout << "int: " << static_cast<int>(f) << std::endl;
+			if (f > 2147483647  || f < -2147483648)
+				std::cout << "int: overflow" << std::endl;
+			else
+				std::cout << "int: " << static_cast<int>(f) << std::endl;
 			std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 			std::cout << "double: " << static_cast<double>(f) << std::endl;
 			return (0);
@@ -93,7 +96,10 @@ int	main(int argc, char **argv)
 				std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			std::cout << "int: " << static_cast<int>(d) << std::endl;
+			if (d > 2147483647  || d < -2147483648)
+				std::cout << "int: overflow" << std::endl;
+			else
+				std::cout << "int: " << static_cast<int>(f) << std::endl;
 			std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
 			std::cout << "double: " << d << std::endl;
 			return (0);
