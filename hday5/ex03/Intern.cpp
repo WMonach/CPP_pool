@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:59:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/28 14:40:32 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:31:15 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ const Intern& Intern::operator=( Intern const & obj)
 
 Intern::~Intern( void )
 {
-	std::cout << " Intern die" << std::endl;
+	std::cout << "Intern die" << std::endl;
 }
 
 Form* Intern::MakeForm( std::string FormName, std::string Target)
