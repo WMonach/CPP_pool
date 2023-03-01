@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:06 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 18:54:18 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/01 18:21:53 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,11 @@ const PresidentialPardonForm&	PresidentialPardonForm::operator=( PresidentialPar
 
 void	PresidentialPardonForm::execute( const Bureaucrat &Boss) const
 {
-	try
-	{
-		if (Boss.getGrade() > this->getExecutionGrade())
-			throw(Form::GradeTooLowException());
-		if (this->getSignature() == 0)
-			throw(Form::NotSigned());
-		std::cout << this->_Target << "have been pardon by Zaphod Beeblebrox" << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (Boss.getGrade() > this->getExecutionGrade())
+		throw(Form::GradeTooLowException());
+	if (this->getSignature() == 0)
+		throw(Form::NotSigned());
+	std::cout << this->_Target << "have been pardon by Zaphod Beeblebrox" << std::endl;
 }
 
 std::string	PresidentialPardonForm::getTarget( void ) const

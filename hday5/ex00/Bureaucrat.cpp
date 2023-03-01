@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/28 10:59:29 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:52:06 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Bureaucrat::Bureaucrat( std::string name, int grade ): _Name(name)
 Bureaucrat::Bureaucrat( Bureaucrat const & rhs): _Name(rhs._Name)
 {
     std::cout << "Bureaucrat is created" << std::endl;
-    this->_Grade = rhs._Grade;
 	*this = rhs;
 }
 
@@ -59,7 +58,7 @@ unsigned int Bureaucrat::getGrade( void ) const
 
 std::ostream	&operator<<( std::ostream & o, Bureaucrat const & rhs)
 {
-	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;;
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
 	return (o);
 }
 
@@ -67,12 +66,12 @@ void	Bureaucrat::promotion( void )
 {
 	if (this->_Grade < 2)
         throw(GradeTooHighException());
-	this->_Grade = this->_Grade - 1;;
+	this->_Grade = this->_Grade - 1;
 }
 
 void	Bureaucrat::retrograde( void )
 {
 	if (this->_Grade > 149)
         throw(GradeTooLowException());
-	this->_Grade = this->_Grade + 1;;
+	this->_Grade = this->_Grade + 1;
 }

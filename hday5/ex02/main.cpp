@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 19:00:45 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/01 19:17:59 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,56 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <cstdlib>
 
 int main(void)
 {
-	Bureaucrat InCoke("Jerome_Powell", 60);
+	Bureaucrat InCoke("Jerome_Powell", 5);
 	Bureaucrat NoTime("GeorgeDeLaCompta", 35);
 	Bureaucrat NeedToSleep("Intern", 120);
 	Bureaucrat DoNothing("Trash", 150);
-	Form	*form = NULL;
 
 	try {
+		RobotomyRequestForm form("TimeForThePlanet");
 		InCoke.promotion();
 		InCoke.retrograde();
-        form = new RobotomyRequestForm("TimeForThePlanet");
-		form->beSigned(InCoke);
-		form->execute(InCoke);
+		NeedToSleep.signForm(form);
+		NoTime.executeForm(form);
+		NoTime.signForm(form);
+		NoTime.executeForm(form);
+		NoTime.executeForm(form);
+		NoTime.executeForm(form);
+		NoTime.executeForm(form);
+		NoTime.executeForm(form);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+	try {
+		ShrubberyCreationForm form("TimeForThePlanet");
+		InCoke.promotion();
+		InCoke.retrograde();
+		InCoke.signForm(form);
+		NoTime.executeForm(form);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+	try {
+		PresidentialPardonForm form("TimeForThePlanet");
+		InCoke.promotion();
+		InCoke.retrograde();
+		NoTime.signForm(form);
+		InCoke.executeForm(form);
+		InCoke.signForm(form);
+		InCoke.executeForm(form);
     }
     catch (std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
     std::cout << "================" << std::endl;
-    try {
-	    InCoke.promotion();
-	    InCoke.promotion();
-	    InCoke.promotion();
-	    InCoke.retrograde();
-    }
-    catch (std::exception& e)
-    {
-       std::cerr << e.what() << std::endl;
-    }
     return (0);
 }

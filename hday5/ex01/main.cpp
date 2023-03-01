@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:04:40 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:05:18 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
     }
     std::cout << "================" << std::endl;
     try {
-        Form lol("GummyBearContrat", 155, 1);
+        //Form lol("GummyBearContrat", 155, 1);
     }
     catch (std::exception& e)
     {

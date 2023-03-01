@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 19:00:45 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/01 19:20:34 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,10 @@ int main(void)
 	Bureaucrat NoTime("GeorgeDeLaCompta", 35);
 	Bureaucrat NeedToSleep("Intern", 120);
 	Bureaucrat DoNothing("Trash", 150);
-	Form	*form = NULL;
 
 	try {
 		InCoke.promotion();
 		InCoke.retrograde();
-        form = new RobotomyRequestForm("TimeForThePlanet");
-		form->beSigned(InCoke);
-		form->execute(InCoke);
     }
     catch (std::exception& e)
     {

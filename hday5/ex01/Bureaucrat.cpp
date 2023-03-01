@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/28 10:59:36 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:06:25 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Bureaucrat::Bureaucrat( std::string name, int grade ): _Name(name)
 Bureaucrat::Bureaucrat( Bureaucrat const & rhs): _Name(rhs._Name)
 {
     std::cout << "Bureaucrat is created" << std::endl;
-    this->_Grade = rhs._Grade;
 	*this = rhs;
 }
 
@@ -78,7 +77,7 @@ void	Bureaucrat::retrograde( void )
 	this->_Grade = this->_Grade + 1;;
 }
 
-void    Bureaucrat::signForm( Form Contrat) const
+void    Bureaucrat::signForm( Form &Contrat) const
 {
 
     try {
