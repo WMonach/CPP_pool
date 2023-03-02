@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 15:40:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/02 17:17:14 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/03/02 17:33:11 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/03/02 17:33:43 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
-#include <stdint.h>
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-uintptr_t serialize(Data* ptr)
-{
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
+#include <iostream>
 
-Data* deserialize(uintptr_t raw)
-{
-	return (reinterpret_cast<Data *>(raw));
-}
-
-int	main(void)
-{
-	Data	*data;
-	Data	test;
-	uintptr_t	raw;
-	
-	test.zuzu = "beautiful";
-	data = &test;
-	raw = serialize(data);
-	data = deserialize(raw);
-	std::cout << data->zuzu << std::endl;
-}
+#endif

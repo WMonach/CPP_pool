@@ -3,20 +3,11 @@ NAME =		polyly
 # ================================================
 
 # FILES ==========================================
-FILES =		Animal.cpp		\
-			WrongCat.cpp	\
-			WrongAnimal.cpp	\
-			main.cpp	\
-			Cat.cpp		\
-			Dog.cpp		\
+FILES =		main.cpp	\
 # ================================================
 
 # HEADER =========================================
-HEADER =	Animal.hpp		\
-			WrongCat.hpp	\
-			WrongAnimal.hpp	\
-			Cat.hpp		\
-			Dog.hpp		\
+HEADER =	whatever.hpp	\
 # ================================================
 
 # FLAGS ==========================================
