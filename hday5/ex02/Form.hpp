@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:32:29 by will              #+#    #+#             */
-/*   Updated: 2023/02/27 18:51:59 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 10:39:09 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class Form
             }
         };
         
-	private :
+	protected :
 		const std::string	_Name;
 		bool			    _Signature;
 		const int	_GradeToSign;

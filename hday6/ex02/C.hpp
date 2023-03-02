@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 19:02:20 by will              #+#    #+#             */
-/*   Updated: 2023/03/02 10:19:22 by wmonacho         ###   ########.fr       */
+/*   Created: 2023/03/02 11:16:09 by wmonacho          #+#    #+#             */
+/*   Updated: 2023/03/02 16:50:28 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_H
-#define INTERN_H
+#ifndef C_HPP
+#define C_HPP
 
-#include "Form.hpp"
+#include "Base.hpp"
 
-class Intern
+class C : public Base
 {
-	private :
-	std::string	_NameForm[3];
-
-	public :
-	Intern( void );
-	Intern( Intern const & rhs);
-	~Intern( void );
-	const Intern& operator=( Intern const& obj);
-	
-	Form*	makeForm(std::string FormName, std::string Target);
+	public:
+	C( void );
+	~C( void );
 };
 
 #endif

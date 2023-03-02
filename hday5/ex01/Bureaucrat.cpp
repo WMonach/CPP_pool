@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 18:06:25 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:12:42 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std::string& Bureaucrat::getName( void ) const
     return(this->_Name);
 }
 
-unsigned int Bureaucrat::getGrade( void ) const
+int Bureaucrat::getGrade( void ) const
 {
     return(this->_Grade);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:59:59 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 21:31:15 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 10:21:53 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ Intern::~Intern( void )
 	std::cout << "Intern die" << std::endl;
 }
 
-Form* Intern::MakeForm( std::string FormName, std::string Target)
+Form* Intern::makeForm( std::string FormName, std::string Target)
 {
 	int i = -1;
-	Form	*NewForm;
+	Form	*NewForm = NULL;
 	int CheckForm = -1;
 	while (++i < 3)
 	{

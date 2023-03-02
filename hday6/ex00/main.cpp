@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:02:18 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 23:23:41 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 14:56:25 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 		int	TmpLength = tmp.length();
 		
 		long int	i = std::strtol(argv[1], &end, 10);
-		if ((i > 2147483647  || i < -2147483648) && (*end == 0))
+		if ((i > INT_MAX  || i < INT_MIN) && (*end == 0))
 		{
 			std::cout << "Value is out of INT range" << std::endl;
 			return (0);
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 		float	f = std::strtof(argv[1], &end);
 		if (f > HUGE_VAL)
 		{
-			std::cout << "granf float " << HUGE_VAL << "   " << f << std::endl;
+			std::cout << "Value is out of FLOAT range" << std::endl;
 			return 0;
 		}
 		int length = end - argv[1];
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 				std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl; 
-			if (f > 2147483647  || f < -2147483648)
+			if (f > INT_MAX  || f < INT_MIN)
 				std::cout << "int: overflow" << std::endl;
 			else
 				std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -84,7 +84,7 @@ int	main(int argc, char **argv)
 		double d = std::strtod(argv[1], &end);
 		if (d >= HUGE_VAL)
 		{
-			std::cout << "big double" << std::endl;
+			std::cout << "Value is out of Double range" << std::endl;
 			return 0;
 		}
 		if (*end == 0)
@@ -96,7 +96,7 @@ int	main(int argc, char **argv)
 				std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			if (d > 2147483647  || d < -2147483648)
+			if (d > INT_MAX  || d < INT_MIN)
 				std::cout << "int: overflow" << std::endl;
 			else
 				std::cout << "int: " << static_cast<int>(f) << std::endl;

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:41:39 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/23 19:06:05 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:09:53 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ const Form&	Form::operator=( Form const & rhs)
 
 void	Form::beSigned( const Bureaucrat &Employee)
 {
-	if (Employee.getGrade() >= 40)
+	if (Employee.getGrade() >= this->getGradeToSign())
 		throw(Form::GradeTooLowException());
 	if (this->_Signature == 1)
 		throw(Form::AlreadySigned());

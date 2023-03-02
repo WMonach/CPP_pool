@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:01 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 18:03:39 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 10:37:02 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

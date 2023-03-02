@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 21:31:01 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 10:23:58 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,66 +16,53 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include <cstdlib>
 
 int main(void)
 {
-	Bureaucrat InCoke("Jerome_Powell", 60);
+	Bureaucrat InCoke("Jerome_Powell", 5);
 	Bureaucrat NoTime("GeorgeDeLaCompta", 35);
 	Bureaucrat NeedToSleep("Intern", 120);
 	Bureaucrat DoNothing("Trash", 150);
-	Intern	BigTrash;
+	Intern	trash;
 	Form*	form;
 
 	try {
+		
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+	try {
+		form = trash.makeForm("PresidentialPardonForm", "you");
+		if (form != NULL)
+		{
+			InCoke.promotion();
+			InCoke.retrograde();
+			InCoke.signForm(*form);
+			NoTime.executeForm(*form);
+			delete form;
+		}
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+		delete form;
+    }
+	try {
+		PresidentialPardonForm form("TimeForThePlanet");
 		InCoke.promotion();
 		InCoke.retrograde();
-		form = BigTrash.MakeForm("ShrubberyCreationForm", "time");
-		delete form;
+		NoTime.signForm(form);
+		InCoke.executeForm(form);
+		InCoke.signForm(form);
+		InCoke.executeForm(form);
     }
     catch (std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
     std::cout << "================" << std::endl;
-    try {
-	    InCoke.promotion();
-	    InCoke.promotion();
-	    InCoke.promotion();
-	    InCoke.retrograde();
-		form = BigTrash.MakeForm("PresidentialPardonForm", "time");
-		delete form;
-    }
-    catch (std::exception& e)
-    {
-       std::cerr << e.what() << std::endl;
-    }
-	try {
-		InCoke.promotion();
-		InCoke.retrograde();
-		form = BigTrash.MakeForm("RobotomyRequestForm", "time");
-		delete form;
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-	try {
-		InCoke.promotion();
-		InCoke.retrograde();
-		form = BigTrash.MakeForm("RobotomyRequestFor", "time");
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-	try {
-		InCoke.promotion();
-		InCoke.retrograde();
-		form = BigTrash.MakeForm("NotForm", "time");
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
     return (0);
 }

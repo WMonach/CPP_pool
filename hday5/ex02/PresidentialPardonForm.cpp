@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:06 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 18:21:53 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:38:54 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ PresidentialPardonForm::~PresidentialPardonForm( void )
 
 const PresidentialPardonForm&	PresidentialPardonForm::operator=( PresidentialPardonForm const & rhs )
 {
-	*this = rhs;
+	this->_Target = rhs._Target;
+	this->_Signature = rhs._Signature;
 	return (*this);
 }
 

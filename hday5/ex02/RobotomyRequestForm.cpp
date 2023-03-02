@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:20 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 18:45:28 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:38:58 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ RobotomyRequestForm::~RobotomyRequestForm( void )
 
 const RobotomyRequestForm&	RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
-	*this = rhs;
+	this->_Target = rhs._Target;
+	this->_Signature = rhs._Signature;
 	return (*this);
 }
 

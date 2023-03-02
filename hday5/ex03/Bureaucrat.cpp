@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/27 18:10:39 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/01 19:16:56 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,17 @@ void    Bureaucrat::signForm( Form &Contrat) const
     catch (std::exception& e)
     {
         std::cerr << this->_Name << " couldn't sign " << Contrat.getName() << " because " << e.what() << std::endl;
-    }   
+    }
 }
 
 void	Bureaucrat::executeForm(Form const & form)
 {
-	if (form.getSignature())
-		std::cout << this->_Name << " executed " << form.getName() << std::endl;
-	else
-		std::cout << "can't executed this form try again with a better grade trash !" << std::endl;
+    try {
+        form.execute(*this);
+        std::cout << this->_Name << " executed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->_Name << " can't execute Form because " << e.what() << std::endl;
+    }
 }

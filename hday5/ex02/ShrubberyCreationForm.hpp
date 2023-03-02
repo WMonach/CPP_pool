@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:08:56 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/02/26 20:37:48 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/02 10:39:16 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ShrubberyCreationForm: public Form
 {
 	private :
-	const std::string	_Target;
+	std::string	_Target;
 
 	public :
 	ShrubberyCreationForm( void );

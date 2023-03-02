@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:09:02 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 19:13:34 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:39:02 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ std::string	ShrubberyCreationForm::getTarget( void ) const
 
 const ShrubberyCreationForm&	ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
 {
-	*this = rhs;
+	this->_Target = rhs._Target;
+	this->_Signature = rhs._Signature;
 	return (*this);
 }
 
