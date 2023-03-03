@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:08:17 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/01 18:05:18 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/03 15:31:48 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
     std::cout << Infos << std::endl;
     
     try {
-        Bureaucrat lol("Jerome_Powell", 155);
+        Bureaucrat lol("Jerome_Powell", 120);
     }
     catch (std::exception& e)
     {
