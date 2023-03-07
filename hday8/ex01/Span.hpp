@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:34:31 by will              #+#    #+#             */
-/*   Updated: 2023/03/07 23:05:37 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:40:28 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ class Span
 		void	addNumber( int	Number );
 		int		shortestSpan( void );
 		int		longestSpan( void );
+		void	sortContainer( void );
 		const std::vector<unsigned int>&	getContainer( void );
-		void	generate( std::vector<unsigned int>::iterator	begin, std::vector<unsigned int>::iterator	end);
+		void	populate( const std::vector<unsigned int>::iterator&	begin, const std::vector<unsigned int>::iterator& end);
 		
 };
 

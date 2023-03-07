@@ -6,13 +6,13 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:30:24 by will              #+#    #+#             */
-/*   Updated: 2023/03/07 23:04:56 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:42:36 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-void    printSet(std::vector<int> const &input)
+void    printSet(std::vector<unsigned int> const &input)
 {
     std::copy(input.begin(), input.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl << std::endl;
@@ -38,14 +38,17 @@ int	main( void )
 	
 	try
     {
-        Span sp = Span(500);
+        Span sp = Span(100);
 
-		std::vector<unsigned int>::iterator begin;
-		std::vector<unsigned int>::iterator end;
+		std::vector<unsigned int> Array(100);
 		
-		begin = sp.getContainer().begin();
-		end = sp.getContainer().end();
-        sp.generate(begin, end);
+		for  ( std::vector<unsigned int>::iterator it = Array.begin(); it != Array.end(); ++it)
+		{
+    	    *it = rand()% 100;
+		}
+		std::cout << Array.size() << "==" << std::endl;
+		sp.populate(Array.begin(), Array.end());
+		sp.sortContainer();
 		printSet(sp.getContainer());
 		std::cout << "Longest span  --> " << sp.longestSpan() << std::endl;
 		std::cout << "Shortest span  --> " << sp.shortestSpan() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:29:05 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/07 23:05:51 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:40:45 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Span::Span(void): _Containers(0)
 {
+	this->_SizeMax = 0;
 }
 
 Span::Span( unsigned int n): _Containers(0)
@@ -21,6 +22,7 @@ Span::Span( unsigned int n): _Containers(0)
 	if (n < 2)
 		throw(std::exception());
 	this->_Containers.reserve(n);
+	this->_SizeMax = n;
 }
 
 Span::Span( Span const & rhs)
@@ -78,7 +80,7 @@ int		Span::longestSpan( void )
 	if (this->_Containers.size() < 2)
 		throw(std::exception());
 	tmp = this->_Containers;
-	sort(tmp.begin(), tmp.end());
+	std::sort(tmp.begin(), tmp.end());
 	diff = *(--(tmp.end())) - *(tmp.begin());
 	return (diff);
 }
@@ -88,11 +90,15 @@ const std::vector<unsigned int>&	Span::getContainer( void )
 	return (this->_Containers);
 }
 
-void	Span::generate( std::vector<unsigned int>::iterator	begin, std::vector<unsigned int>::iterator	end)
+void	Span::populate( const std::vector<unsigned int>::iterator&	begin, const std::vector<unsigned int>::iterator& end)
 {
-	for  (unsigned int i; begin != end; begin++)
+	for  ( std::vector<unsigned int>::iterator it = begin; it != end; ++it)
 	{
-        *begin = std::rand();
-		i++;
+        this->addNumber(*it);
 	}
+}
+
+void	Span::sortContainer( void )
+{
+	std::sort(this->_Containers.begin(), this->_Containers.end());
 }
