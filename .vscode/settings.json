@@ -70,6 +70,9 @@
 		"memory_resource": "cpp",
 		"numeric": "cpp",
 		"random": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"set": "cpp"
 	}
 }
