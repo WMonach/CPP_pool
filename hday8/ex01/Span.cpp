@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:29:05 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/07 17:16:12 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:05:51 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 Span::Span(void): _Containers(0)
 {
-	this->_SizeMax = 0;
 }
 
 Span::Span( unsigned int n): _Containers(0)
 {
 	if (n < 2)
 		throw(std::exception());
-	this->_SizeMax = n;
+	this->_Containers.reserve(n);
 }
 
 Span::Span( Span const & rhs)
@@ -36,7 +35,7 @@ Span::~Span(void)
 
 const Span& Span::operator=( Span const & obj)
 {
-	this->_SizeMax = obj._SizeMax;
+	this->_Containers = obj._Containers;
 	return (*this);
 }
 
@@ -49,8 +48,8 @@ void	Span::addNumber( int Number )
 
 int		Span::shortestSpan( void )
 {	
-	std::vector<int>::iterator	it1;
-	std::vector<int>::iterator	it2;
+	std::vector<unsigned int>::iterator	it1;
+	std::vector<unsigned int>::iterator	it2;
 	int							diff;
 	int							ShortDiff;
 	
@@ -73,7 +72,7 @@ int		Span::shortestSpan( void )
 
 int		Span::longestSpan( void )
 {
-	std::vector<int>	tmp;
+	std::vector<unsigned int>	tmp;
 	int					diff;
 	
 	if (this->_Containers.size() < 2)
@@ -84,15 +83,16 @@ int		Span::longestSpan( void )
 	return (diff);
 }
 
-const std::vector<int>&	Span::getContainer( void )
+const std::vector<unsigned int>&	Span::getContainer( void )
 {
 	return (this->_Containers);
 }
 
-void	Span::generate( unsigned int size)
+void	Span::generate( std::vector<unsigned int>::iterator	begin, std::vector<unsigned int>::iterator	end)
 {
-	for (unsigned int i = 0; i < size && i + this->_Containers.size() < this->_SizeMax; ++i)
+	for  (unsigned int i; begin != end; begin++)
 	{
-		this->_Containers.push_back(rand()% size);
+        *begin = std::rand();
+		i++;
 	}
 }

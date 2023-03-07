@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:34:31 by will              #+#    #+#             */
-/*   Updated: 2023/03/07 17:16:23 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:05:37 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Span
 {
 		private :
 		unsigned int					_SizeMax;
-		std::vector<int>				_Containers;
+		std::vector<unsigned int>				_Containers;
 		
 		public :
 		Span( void );
@@ -38,8 +38,8 @@ class Span
 		void	addNumber( int	Number );
 		int		shortestSpan( void );
 		int		longestSpan( void );
-		const std::vector<int>&	getContainer( void );
-		void	generate( unsigned int number);
+		const std::vector<unsigned int>&	getContainer( void );
+		void	generate( std::vector<unsigned int>::iterator	begin, std::vector<unsigned int>::iterator	end);
 		
 };
 

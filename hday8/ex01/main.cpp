@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:30:24 by will              #+#    #+#             */
-/*   Updated: 2023/03/07 17:19:47 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:04:56 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,12 @@ int	main( void )
     {
         Span sp = Span(500);
 
-        sp.generate(10000);
+		std::vector<unsigned int>::iterator begin;
+		std::vector<unsigned int>::iterator end;
+		
+		begin = sp.getContainer().begin();
+		end = sp.getContainer().end();
+        sp.generate(begin, end);
 		printSet(sp.getContainer());
 		std::cout << "Longest span  --> " << sp.longestSpan() << std::endl;
 		std::cout << "Shortest span  --> " << sp.shortestSpan() << std::endl;
