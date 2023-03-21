@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:29:05 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/07 23:40:45 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/08 13:45:16 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Span::Span(void): _Containers(0)
 Span::Span( unsigned int n): _Containers(0)
 {
 	if (n < 2)
-		throw(std::exception());
+		throw(Span::SizeToLow());
 	this->_Containers.reserve(n);
 	this->_SizeMax = n;
 }
@@ -44,7 +44,7 @@ const Span& Span::operator=( Span const & obj)
 void	Span::addNumber( int Number )
 {
 	if (this->_Containers.size() >= this->_SizeMax)
-		throw(std::exception());
+		throw(Span::SizeToLow());
 	this->_Containers.push_back(Number);
 }
 
@@ -56,7 +56,7 @@ int		Span::shortestSpan( void )
 	int							ShortDiff;
 	
 	if (this->_Containers.size() < 2)
-		throw(std::exception());
+		throw(Span::SizeToLow());
 	sort(this->_Containers.begin(), this->_Containers.end());
 	it1 = this->_Containers.begin();
 	it2 = ++this->_Containers.begin();
@@ -78,7 +78,7 @@ int		Span::longestSpan( void )
 	int					diff;
 	
 	if (this->_Containers.size() < 2)
-		throw(std::exception());
+		throw(Span::SizeToLow());
 	tmp = this->_Containers;
 	std::sort(tmp.begin(), tmp.end());
 	diff = *(--(tmp.end())) - *(tmp.begin());
@@ -92,10 +92,16 @@ const std::vector<unsigned int>&	Span::getContainer( void )
 
 void	Span::populate( const std::vector<unsigned int>::iterator&	begin, const std::vector<unsigned int>::iterator& end)
 {
-	for  ( std::vector<unsigned int>::iterator it = begin; it != end; ++it)
+	std::vector<unsigned int>::iterator	it = begin;
+	int	i = 0;
+	while (it != end)
 	{
-        this->addNumber(*it);
+		i++;
+		it++;
 	}
+	if (this->_Containers.size() + i > this->_SizeMax)
+		throw(Span::RangeIteratorToBig());
+	this->_Containers.insert(this->_Containers.begin(), begin , end);
 }
 
 void	Span::sortContainer( void )
