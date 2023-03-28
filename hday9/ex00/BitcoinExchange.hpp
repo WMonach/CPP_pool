@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:52:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/28 13:04:43 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:21:27 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class BitcoinExchange
 		BitcoinExchange(BitcoinExchange const &rhs);
 		BitcoinExchange &operator=(BitcoinExchange const &obj);
 		~BitcoinExchange(void);
+		
+		void	printBitcoin( std::string line) const;
 
 };
 
