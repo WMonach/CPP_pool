@@ -3,32 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:17:41 by will              #+#    #+#             */
-/*   Updated: 2023/03/21 17:41:34 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:02:38 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void	parsing(string *filename)
+void	BitcoinExchangeLauncher(string *filename)
 {
+	BitcoinExchange	data;
+	std::fstream	database;
+	std::string		line;
+	
+	database.open(filename, std::fstream::in | std::fstream::out);
+	if (!database.is_open())
+	{
+		std::cerr << "Error: could not open file." << std::endl;
+		database.close();
+		exit(1);
+	}
 	
 	return ;
 }
 
 int main(int argc, char **argv)
 {
-	std::map<std::string, float>	bitcoin_rates;
-	if (argc != 2)
+	switch (argc)
 	{
-		parsing(argv[1]);
-		return (0);
+		case 1 :
+			std::cerr << "Error: could not open file." << std::endl;
+			return (1);
+		case 2 :
+			BitcoinExchangeLauncher(argv[1]);
+			break ;
+		default :
+			std::cerr << "Wrong number of arguments." << std::endl;
+			return (1);
 	}
-	if (argc == 1)
-		std::cout << "Error: could not open file." << std::endl;
-	else
-		std::cout << "Error: Too many argument" << std::endl;
-	return (1);
+	return (0);
 }
