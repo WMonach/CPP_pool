@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:52:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/24 16:36:08 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/29 18:34:11 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@
 
 class BitcoinExchange
 {
-	private:
+	private :
 		std::map<std::string, float>	bitcoin_rates;
-		
-	public:
+	public :
 		BitcoinExchange(void);
-		BitcoinExchange(BitcoinExchange const &ref);
-		BitcoinExchange &operator=(BitcoinExchange const &ref);
+		BitcoinExchange(BitcoinExchange const &rhs);
+		BitcoinExchange &operator=(BitcoinExchange const &obj);
 		~BitcoinExchange(void);
+		
+		void	printBitcoin( std::string line) const;
+
 };
 
 #endif
