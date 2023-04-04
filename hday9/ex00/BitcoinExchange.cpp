@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:54:09 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/29 19:04:06 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/03/30 21:56:26 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,74 @@ void	BitcoinExchange::printBitcoin( std::string line) const
 		std::cout << "Error: bad input => " << line << std::endl;
 		return ;
 	}
+	value = std::atof(line.substr(pipe + 3).c_str());
+	database_feed();
+	if (value < 0)
+		std::cout << "Error: not a positive number." << std::endl;
+	else if (value > 1000)
+		std::cout << "Error: too large a number." << std::endl;
+	else
+	{
+		std::map<std::string, float>::const_iterator it = this->bitcoin_rates.upper_bound(date);
+		if (it != this->bitcoin_rates.begin())
+			it--;
+
+		// std::cout << "    date = " << it->first
+		// 	<< "  quotient = " << it->second << std::endl;
+		
+		std::cout << date << " => " << value << " = " 
+			<< it->second << std::endl;
+	}
 	
 }
 
-int	checkDate()
+int	BitcoinExchange::check_date(std::string date) const
+{
+	size_t	i;
+	size_t	y;
+	int		check;
+
+	i = date.find("-");
+	if (i != 4 || date.find_first_not_of("0123456789") != i)
+		return (1);
+	y = i + 1;
+	i = date.find("-", i + 1);
+	check = std::atoi(date.substr(y, i).c_str());
+	if (i - y != 2 || date.find_first_not_of("0123456789", y) != i || 
+			check < 1 || check > 12)
+		return (1);
+	y = i + 1;
+	date.find_first_not_of("0123456789", y);
+	check = std::atoi(date.substr(y, date.size()).c_str());
+	if ( date.size() - y != 2 || check < 1 || check > 31 ||
+			date.find_first_not_of("0123456789", y) != std::string::npos)
+		return (1);
+	return (0);
+}
+
+void	BitcoinExchange::database_feed(void) const
+{
+	std::fstream	database;
+	std::string		line;
+	size_t			coma;
+
+	database.open("data.csv", std::fstream::in );
+	if (!database.is_open())
+	{
+		std::cerr << "Error: could not load database file." << std::endl;
+		database.close();
+		exit(1);
+	}
+
+	/*delete first line wich is format type*/
+	std::getline(database, line);
+	line.clear();
+
+	while ( !(std::getline(database, line).eof()) )
+	{
+		coma = line.find(",");
+		this->bitcoin_rates[line.substr(0, coma)] = std::atof(line.substr(coma + 1, std::string::npos).c_str());
+		line.clear();
+	}
+	database.close();
+}
