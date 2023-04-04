@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:52:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/30 15:24:39 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 13:42:34 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class BitcoinExchange
 		std::map<std::string, float>	bitcoin_rates;
 		
 		int	check_date(std::string date) const;
-		void	database_feed(void) const;
+		void	database_feed(void);
 
 	public :
 		BitcoinExchange(void);
@@ -33,7 +33,7 @@ class BitcoinExchange
 		BitcoinExchange &operator=(BitcoinExchange const &obj);
 		~BitcoinExchange(void);
 		
-		void	printBitcoin( std::string line) const;
+		void	printBitcoin( std::string line);
 
 };
 

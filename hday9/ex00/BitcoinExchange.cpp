@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:54:09 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/03/30 21:56:26 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 14:44:48 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange const &obj)
 	return (*this);
 }
 
-void	BitcoinExchange::printBitcoin( std::string line) const
+void	BitcoinExchange::printBitcoin( std::string line)
 {
 	size_t			pipe;
 	float			value;
@@ -51,22 +51,18 @@ void	BitcoinExchange::printBitcoin( std::string line) const
 		return ;
 	}
 	value = std::atof(line.substr(pipe + 3).c_str());
-	database_feed();
 	if (value < 0)
 		std::cout << "Error: not a positive number." << std::endl;
 	else if (value > 1000)
 		std::cout << "Error: too large a number." << std::endl;
 	else
 	{
+		database_feed();
 		std::map<std::string, float>::const_iterator it = this->bitcoin_rates.upper_bound(date);
 		if (it != this->bitcoin_rates.begin())
 			it--;
-
-		// std::cout << "    date = " << it->first
-		// 	<< "  quotient = " << it->second << std::endl;
-		
 		std::cout << date << " => " << value << " = " 
-			<< it->second << std::endl;
+			<< it->second * value << std::endl;
 	}
 	
 }
@@ -95,7 +91,7 @@ int	BitcoinExchange::check_date(std::string date) const
 	return (0);
 }
 
-void	BitcoinExchange::database_feed(void) const
+void	BitcoinExchange::database_feed(void)
 {
 	std::fstream	database;
 	std::string		line;
@@ -110,14 +106,16 @@ void	BitcoinExchange::database_feed(void) const
 	}
 
 	/*delete first line wich is format type*/
-	std::getline(database, line);
-	line.clear();
+	// std::getline(database, line);
+	// line.clear();
 
 	while ( !(std::getline(database, line).eof()) )
 	{
 		coma = line.find(",");
 		this->bitcoin_rates[line.substr(0, coma)] = std::atof(line.substr(coma + 1, std::string::npos).c_str());
-		line.clear();
+		// line.clear();
 	}
-	database.close();
+	this->bitcoin_rates[line.substr(0, coma)] = 2;
+		// std::cout << this->bitcoin_rates[line.substr(0, coma)] << std::endl;
+	// database.close();
 }
