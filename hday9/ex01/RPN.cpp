@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:54:50 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/05 16:50:36 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:30:39 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,30 @@ void	RPN::operation(char	c)
 	double operand1;
    	double operand2;
 	
-	operand2 = _operands.top(); _operands.pop();
-    operand1 = _operands.top(); _operands.pop();
-    switch (c)
+	if (_operands.size() > 1)
     {
-        case '*':
-            _operands.push(operand1 * operand2);
-            break ;
-        case '+':
-            _operands.push(operand1 + operand2);
-            break ;
-        case '-':
-            _operands.push(operand1 - operand2);
-            break ;
-        case '/':
-            if (operand2 == 0)
-                throw ArgInvalid();
-            _operands.push(operand1 / operand2);
-            break ;
-    }
+		operand2 = _operands.top(); _operands.pop();
+    	operand1 = _operands.top(); _operands.pop();
+    	switch (c)
+    	{
+    	    case '*':
+    	        _operands.push(operand1 * operand2);
+    	        break ;
+    	    case '+':
+    	        _operands.push(operand1 + operand2);
+    	        break ;
+    	    case '-':
+    	        _operands.push(operand1 - operand2);
+    	        break ;
+    	    case '/':
+    	        if (operand2 == 0)
+    	            throw ArgInvalid();
+    	        _operands.push(operand1 / operand2);
+    	        break ;
+    	}
+	}
+	else
+        throw ArgInvalid();
 }
 
 void	RPN::print_value( void )
