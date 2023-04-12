@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/07 19:16:07 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:39:58 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,21 @@ void	checkRepetition(int ac, char **av)
 	}	
 }
 
+void	print(PmergeMe &inst)
+{
+	std::vector<int> tmp_vector(inst.getVector());
+    std::deque<int> tmp_deque(inst.getDeque());
+	
+	struct timeval startVec, endVec;
+    gettimeofday(&startVec, NULL);
+	
+	
+	inst.sort(inst.getVector());
+	gettimeofday(&endVec, NULL);
+	std::cout << "Time for the first container : " << (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec) << " microseconds" << std::endl;
+	
+}
+
 void	parsing( int ac, char **av)
 {
 	checkDigit(ac, av);
@@ -75,6 +90,15 @@ void	sortPrint( int ac, char **av )
 		instance.set(std::atoi(av[i]));
 		i++;
 	}
+	std::cout << "First Container Before : ";
+	for (int u = 1 ; u < ac; u++)
+		std::cout << av[u] << " ";
+	std::cout << std::endl;
+	// std::cout << "Second Container Before : ";
+	// for (int u = 1 ; u < ac; u++)
+	// 	std::cout << av[u] << " ";
+	// std::cout << std::endl;
+	print(instance);
 }
 
 int	main(int argc, char **argv)
