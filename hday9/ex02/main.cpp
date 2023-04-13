@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/12 17:39:58 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:47:38 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	checkDigit(int ac, char **av)
 {
-	int	i = 1;
+	int	i = 0;
 	size_t	j;
 
 	
@@ -34,7 +34,7 @@ void	checkDigit(int ac, char **av)
 
 void	checkRepetition(int ac, char **av)
 {
-	size_t	i = 1;
+	size_t	i = 0;
 	size_t	j;
 	size_t	len;
 
@@ -59,7 +59,7 @@ void	checkRepetition(int ac, char **av)
 	}	
 }
 
-void	print(PmergeMe &inst)
+void	print(PmergeMe &inst, int ac, char **av)
 {
 	std::vector<int> tmp_vector(inst.getVector());
     std::deque<int> tmp_deque(inst.getDeque());
@@ -68,10 +68,14 @@ void	print(PmergeMe &inst)
     gettimeofday(&startVec, NULL);
 	
 	
-	inst.sort(inst.getVector());
+	inst.sortVector(inst.getVector());
+	std::cout << "Second Container Before : ";
+	for (int u = 1 ; u < ac; u++)
+		std::cout << av[u] << " ";
+	std::cout << std::endl;
 	gettimeofday(&endVec, NULL);
 	std::cout << "Time for the first container : " << (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec) << " microseconds" << std::endl;
-	
+	inst.sortDeque(inst.getDeque());	
 }
 
 void	parsing( int ac, char **av)
@@ -91,25 +95,21 @@ void	sortPrint( int ac, char **av )
 		i++;
 	}
 	std::cout << "First Container Before : ";
-	for (int u = 1 ; u < ac; u++)
+	for (int u = 0 ; u < ac; u++)
 		std::cout << av[u] << " ";
 	std::cout << std::endl;
-	// std::cout << "Second Container Before : ";
-	// for (int u = 1 ; u < ac; u++)
-	// 	std::cout << av[u] << " ";
-	// std::cout << std::endl;
-	print(instance);
+	print(instance, ac, av);
 }
 
 int	main(int argc, char **argv)
 {
-
+	argv = &argv[1];
 	if (argc > 0)
 	{
 		try
 		{
-			parsing(argc,argv);
-			sortPrint(argc, argv);
+			parsing(argc - 1,argv);
+			sortPrint(argc - 1, argv);
 		}
 		catch (const std::exception& e) 
 		{

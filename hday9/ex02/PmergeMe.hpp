@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:28:26 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/12 16:59:33 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:12:15 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,22 @@ class PmergeMe
 		std::vector<int>	_vector;
 		std::deque<int>		_deque;
 		
-		void	mergeInsertSort(std::vector<int>& v, int left, int right);
-		void	insertionSort(std::vector<int>& v, int left, int right);
+		void	mergeInsertSortVector(std::vector<int>& v, int left, int right);
+		void	insertionSortVector(std::vector<int>& v, int left, int right);
+		void	mergeInsertSortDeque(std::deque<int>& v, int left, int right);
+		void	insertionSortDeque(std::deque<int>& v, int left, int right);
+
 	public :
 		PmergeMe(void);
-		PmergeMe(PmergeMe const &ref);
-		PmergeMe&	operator=(PmergeMe const &ref);
+		PmergeMe(PmergeMe const &rhs);
+		PmergeMe&	operator=(PmergeMe const &obj);
 		~PmergeMe(void);
 		
 		void	set(int nb);
-		std::vector<int>&	getVector( void );
-		std::deque<int>		getDeque( void );
-		void	sort(std::vector<int>& v);
+		std::vector<int>&		getVector( void );
+		std::deque<int>&		getDeque( void );
+		void	sortVector(std::vector<int>& v);
+		void	sortDeque(std::deque<int>& d);
 };
 
 #endif
