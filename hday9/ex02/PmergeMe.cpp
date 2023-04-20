@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:28:58 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/13 17:12:32 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/04/14 12:29:41 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,15 +104,9 @@ void	PmergeMe::insertionSortDeque(std::deque<int>& d, int left, int right)
         }
         d[j + 1] = tmp;
     }
-	// unsigned int i = 0;
-	// while ( i < v.size())
-	// {
-	// 	std::cout << v[i] << std::endl;
-	// 	i++;
-	// }
 }
 
-void mergeInsertSortDeque(std::deque<int>& d, int left, int right)
+void PmergeMe::mergeInsertSortDeque(std::deque<int>& d, int left, int right)
 {
     if (left >= right) 
 		return;
@@ -127,7 +121,7 @@ void mergeInsertSortDeque(std::deque<int>& d, int left, int right)
     std::inplace_merge(d.begin() + left, d.begin() + mid + 1, d.begin() + right + 1);
 }
 
-void mergeInsertSortDeque(std::deque<int>& d)
+void PmergeMe::sortDeque(std::deque<int>& d)
 {
     mergeInsertSortDeque(d, 0, d.size() - 1);
 	std::cout << "Second Container After :  " ;

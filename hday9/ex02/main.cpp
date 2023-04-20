@@ -6,7 +6,7 @@
 /*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/13 16:47:38 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/04/14 12:36:02 by will             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,28 @@ void	print(PmergeMe &inst, int ac, char **av)
     std::deque<int> tmp_deque(inst.getDeque());
 	
 	struct timeval startVec, endVec;
-    gettimeofday(&startVec, NULL);
+	float	vector_time;
+	float	deque_time;
 	
 	
-	inst.sortVector(inst.getVector());
-	std::cout << "Second Container Before : ";
-	for (int u = 1 ; u < ac; u++)
+	std::cout << "First Container Before : ";
+	for (int u = 0 ; u < ac; u++)
 		std::cout << av[u] << " ";
 	std::cout << std::endl;
+    gettimeofday(&startVec, NULL);
+	inst.sortVector(inst.getVector());
 	gettimeofday(&endVec, NULL);
-	std::cout << "Time for the first container : " << (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec) << " microseconds" << std::endl;
-	inst.sortDeque(inst.getDeque());	
+	std::cout << "Second Container Before : ";
+	for (int u = 0 ; u < ac; u++)
+		std::cout << av[u] << " ";
+	std::cout << std::endl;
+	vector_time = (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec);
+	gettimeofday(&startVec, NULL);
+	inst.sortDeque(inst.getDeque());
+	gettimeofday(&endVec, NULL);
+	deque_time = (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec);
+	std::cout << "Time for the first container : " << vector_time << " microseconds" << std::endl;
+	std::cout << "Time for the second container : " << deque_time << " microseconds" << std::endl;
 }
 
 void	parsing( int ac, char **av)
@@ -94,17 +105,13 @@ void	sortPrint( int ac, char **av )
 		instance.set(std::atoi(av[i]));
 		i++;
 	}
-	std::cout << "First Container Before : ";
-	for (int u = 0 ; u < ac; u++)
-		std::cout << av[u] << " ";
-	std::cout << std::endl;
 	print(instance, ac, av);
 }
 
 int	main(int argc, char **argv)
 {
 	argv = &argv[1];
-	if (argc > 0)
+	if (argc > 1)
 	{
 		try
 		{
