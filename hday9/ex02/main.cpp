@@ -6,7 +6,11 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/05/17 14:44:11 by wmonacho         ###   ########.fr       */
+=======
+/*   Updated: 2023/04/14 12:36:02 by will             ###   ########lyon.fr   */
+>>>>>>> e038fe7130222e51ad2c7260270c9481f900a92c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +68,8 @@ void	print(PmergeMe &inst, int ac, char **av)
     std::deque<size_t> tmp_deque(inst.getDeque());
 	
 	struct timeval startVec, endVec;
-    gettimeofday(&startVec, NULL);
+	float	vector_time;
+	float	deque_time;
 	
 	
 	std::cout << "Deque Container Before	: ";
