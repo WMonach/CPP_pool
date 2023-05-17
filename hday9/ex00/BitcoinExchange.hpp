@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:52:07 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/04 13:42:34 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:26:52 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class BitcoinExchange
 	private :
 		std::map<std::string, float>	bitcoin_rates;
 		
-		int	check_date(std::string date) const;
-		void	database_feed(void);
+		int		checkDate(std::string date);
+		void	databaseFeed(void);
+		int		checkMonth(int year, int month, int day);
 
 	public :
 		BitcoinExchange(void);

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:54:09 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/04 14:44:48 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:29:03 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	BitcoinExchange::printBitcoin( std::string line)
 	size_t			pipe;
 	float			value;
 	std::string		date;
+	size_t			space;
 
 	pipe = line.find(" | ");
 	if (pipe == std::string::npos)
@@ -45,29 +46,47 @@ void	BitcoinExchange::printBitcoin( std::string line)
 		return ;
 	}
 	date = line.substr(0, pipe);
-	if (check_date(date))
+	if (checkDate(date))
 	{
 		std::cout << "Error: bad input => " << line << std::endl;
 		return ;
 	}
-	value = std::atof(line.substr(pipe + 3).c_str());
+	space = line.substr(pipe + 3).find_first_not_of(" ");
+	std::cout << line.substr(pipe + 3 + space) << std::endl;
+	if (line.substr(pipe + 3 + space).find_first_not_of("0123456789.") != std::string::npos)
+	{
+		std::cout << "Error: bad value." << std::endl;
+		return ;
+	}
+	value = std::atof(line.substr(pipe + 3 + space).c_str());
 	if (value < 0)
 		std::cout << "Error: not a positive number." << std::endl;
 	else if (value > 1000)
 		std::cout << "Error: too large a number." << std::endl;
+	else if (!line.substr(pipe + 3 + space).find_first_not_of("0123456789."))
+		std::cout << "Error: bad value." << std::endl;
 	else
 	{
-		database_feed();
-		std::map<std::string, float>::const_iterator it = this->bitcoin_rates.upper_bound(date);
+		databaseFeed();
+		std::map<std::string, float>::const_iterator it = this->bitcoin_rates.lower_bound(date);
+		if (it == this->bitcoin_rates.end())
+    	{
+    	    std::cout << "Error: no date found." << std::endl;
+    	    return;
+    	}
 		if (it != this->bitcoin_rates.begin())
 			it--;
+		else
+    	{
+    	    std::cout << "Error: no smaller date found." << std::endl;
+    	    return;
+    	}
 		std::cout << date << " => " << value << " = " 
 			<< it->second * value << std::endl;
 	}
-	
 }
 
-int	BitcoinExchange::check_date(std::string date) const
+int	BitcoinExchange::checkDate(std::string date)
 {
 	size_t	i;
 	size_t	y;
@@ -82,6 +101,8 @@ int	BitcoinExchange::check_date(std::string date) const
 	if (i - y != 2 || date.find_first_not_of("0123456789", y) != i || 
 			check < 1 || check > 12)
 		return (1);
+	if (!checkMonth(std::atoi(date.substr(0, 4).c_str()), std::atoi(date.substr(y, i).c_str()), std::atoi(date.substr(i + 1, date.size()).c_str())))
+		return (1);
 	y = i + 1;
 	date.find_first_not_of("0123456789", y);
 	check = std::atoi(date.substr(y, date.size()).c_str());
@@ -91,7 +112,7 @@ int	BitcoinExchange::check_date(std::string date) const
 	return (0);
 }
 
-void	BitcoinExchange::database_feed(void)
+void	BitcoinExchange::databaseFeed(void)
 {
 	std::fstream	database;
 	std::string		line;
@@ -115,7 +136,19 @@ void	BitcoinExchange::database_feed(void)
 		this->bitcoin_rates[line.substr(0, coma)] = std::atof(line.substr(coma + 1, std::string::npos).c_str());
 		// line.clear();
 	}
-	this->bitcoin_rates[line.substr(0, coma)] = 2;
+	//this->bitcoin_rates[line.substr(0, coma)] = 2;
 		// std::cout << this->bitcoin_rates[line.substr(0, coma)] << std::endl;
 	// database.close();
+}
+
+int	BitcoinExchange::checkMonth(int year, int month, int day)
+{
+	std::cout << "y :" << year << " m :" << month << " d :" << day << std::endl;
+	if (month == 2 && year % 4 != 0 && day > 28)
+		return (0);
+	else if ((month == 4 || month ==  6 || month == 9 || month == 11) && day > 30)
+		return (0);
+	else if (year % 4 == 0 && year % 100 == 0 && month == 2 && day > 28)
+		return (0);
+	return (1);
 }

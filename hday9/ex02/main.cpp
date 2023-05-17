@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/13 16:47:38 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/05/17 14:44:11 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	checkDigit(int ac, char **av)
 	int	i = 0;
 	size_t	j;
 
-	
+	std::cerr << "TEST" << std::endl;
 	while (i < ac)
 	{
 		j = 0;
 		while (j < std::strlen(av[i]))
 		{
-			if (std::isdigit(static_cast<int>(av[i][j])) == 1)
+			if (std::isdigit(static_cast<int>(av[i][j])))
 				j++;
 			else
 				throw (std::exception());
@@ -38,7 +38,6 @@ void	checkRepetition(int ac, char **av)
 	size_t	j;
 	size_t	len;
 
-	
 	while (i < static_cast<size_t>(ac))
 	{
 		j = i;
@@ -56,26 +55,30 @@ void	checkRepetition(int ac, char **av)
 				throw (std::exception());
 		}
 		i++;
-	}	
+	}
 }
 
 void	print(PmergeMe &inst, int ac, char **av)
 {
-	std::vector<int> tmp_vector(inst.getVector());
-    std::deque<int> tmp_deque(inst.getDeque());
+	std::vector<size_t> tmp_vector(inst.getVector());
+    std::deque<size_t> tmp_deque(inst.getDeque());
 	
 	struct timeval startVec, endVec;
     gettimeofday(&startVec, NULL);
 	
 	
-	inst.sortVector(inst.getVector());
-	std::cout << "Second Container Before : ";
-	for (int u = 1 ; u < ac; u++)
+	std::cout << "Deque Container Before	: ";
+	for (int u = 0 ; u < ac; u++)
 		std::cout << av[u] << " ";
 	std::cout << std::endl;
+	inst.sortVector(inst.getVector());
 	gettimeofday(&endVec, NULL);
-	std::cout << "Time for the first container : " << (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec) << " microseconds" << std::endl;
+	struct timeval startDeq, endDeq;
+	gettimeofday(&startDeq, NULL);
 	inst.sortDeque(inst.getDeque());	
+	gettimeofday(&endDeq, NULL);
+	std::cout << "Time for the Vector container : " << (endVec.tv_sec - startVec.tv_sec) + (endVec.tv_usec - startVec.tv_usec) << " microseconds" << std::endl;
+	std::cout << "Time for the Deque container : " << (endDeq.tv_sec - startDeq.tv_sec) + (endDeq.tv_usec - startDeq.tv_usec) << " microseconds" << std::endl;
 }
 
 void	parsing( int ac, char **av)
@@ -91,10 +94,10 @@ void	sortPrint( int ac, char **av )
 	
 	while (i < ac)
 	{
-		instance.set(std::atoi(av[i]));
+		instance.set(std::atol(av[i]));
 		i++;
 	}
-	std::cout << "First Container Before : ";
+	std::cout << "Vector Container Before	: ";
 	for (int u = 0 ; u < ac; u++)
 		std::cout << av[u] << " ";
 	std::cout << std::endl;
@@ -104,7 +107,7 @@ void	sortPrint( int ac, char **av )
 int	main(int argc, char **argv)
 {
 	argv = &argv[1];
-	if (argc > 0)
+	if (argc > 1)
 	{
 		try
 		{

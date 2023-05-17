@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:17:41 by will              #+#    #+#             */
-/*   Updated: 2023/03/29 18:34:28 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/05/17 10:38:01 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ void	parsing(char *filename)
 			data.printBitcoin(line);
 			line.clear();
 		}
+		if (line.size() > 0)
+		{
+			data.printBitcoin(line);
+			line.clear();
+		}
 	}
 	else 
 	{
@@ -43,6 +48,11 @@ void	parsing(char *filename)
 		{
 			if (!line.compare("date | value"))
 				continue ;
+			data.printBitcoin(line);
+			line.clear();
+		}
+		if (line.size() > 0)
+		{
 			data.printBitcoin(line);
 			line.clear();
 		}

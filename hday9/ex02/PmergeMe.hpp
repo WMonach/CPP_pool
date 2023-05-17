@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: will <will@student.42lyon.fr>              +#+  +:+       +#+        */
+/*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:28:26 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/13 17:12:15 by will             ###   ########lyon.fr   */
+/*   Updated: 2023/05/17 16:11:03 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,19 @@
 #include <sys/time.h>
 #include <time.h>
 #include <algorithm>
+#include <cstdlib>
 
 
 class PmergeMe 
 {
 	private :
-		std::vector<int>	_vector;
-		std::deque<int>		_deque;
+		std::vector<size_t>	_vector;
+		std::deque<size_t>		_deque;
 		
-		void	mergeInsertSortVector(std::vector<int>& v, int left, int right);
-		void	insertionSortVector(std::vector<int>& v, int left, int right);
-		void	mergeInsertSortDeque(std::deque<int>& v, int left, int right);
-		void	insertionSortDeque(std::deque<int>& v, int left, int right);
+		void	mergeInsertSortVector(std::vector<size_t>& v, int left, int right);
+		void	insertionSortVector(std::vector<size_t>& v, int left, int right);
+		void	mergeInsertSortDeque(std::deque<size_t>& v, int left, int right);
+		void	insertionSortDeque(std::deque<size_t>& d, int left, int right);
 
 	public :
 		PmergeMe(void);
@@ -42,11 +43,45 @@ class PmergeMe
 		PmergeMe&	operator=(PmergeMe const &obj);
 		~PmergeMe(void);
 		
-		void	set(int nb);
-		std::vector<int>&		getVector( void );
-		std::deque<int>&		getDeque( void );
-		void	sortVector(std::vector<int>& v);
-		void	sortDeque(std::deque<int>& d);
+		void	set(size_t nb);
+		std::vector<size_t>&		getVector( void );
+		std::deque<size_t>&		getDeque( void );
+		void	sortVector(std::vector<size_t>& v);
+		void	sortDeque(std::deque<size_t>& d);
+};
+
+class Exception: public std::exception
+{
+	protected:
+        std::string msg;
+    public:
+        Exception() {
+            this->msg = "Exception : ";
+        }
+
+        Exception(std::exception exception) {
+            this->msg = exception.what() + msg;
+        }
+
+        ~Exception()throw(){};
+
+        virtual char const * what() const throw() {
+            return msg.c_str();
+        };
+}
+
+class  NotDigit: public Exception
+{   public:
+        NotDigit() {
+            this->msg += "it's not a digit";
+        }
+};
+
+class  : public Exception
+{   public:
+        () {
+            this->msg += "";
+        }
 };
 
 #endif

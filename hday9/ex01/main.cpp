@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:54:34 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/07 18:08:50 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:35:12 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,29 @@ bool operator_check(std::string::iterator it) {
     return (false);
 }
 
+int countOccurrences(const std::string& str, const std::string& characters) {
+    int count = 0;
+    for (std::string::size_type i = 0; i < str.length(); ++i) {
+        if (characters.find(str[i]) != std::string::npos) {
+            count++;
+        }
+    }
+    return count;
+}
+
 void	rnp(std::string cmd)
 {
 	RPN	value;
+	int	ope;
+	int operands;
+	
 	if (cmd.find_first_not_of("0123456789+-/* ") != std::string::npos)
 		throw(InvalidChar());
 	std::size_t _operator = cmd.find_first_of("+-*/");
+	ope = countOccurrences(cmd, "+-*/");
+	operands = countOccurrences(cmd, "0123456789");
+	if (operands - ope > 1)
+		throw ArgInvalid();
 	if (_operator == std::string::npos)
         throw(ArgInvalid());
 	for (std::size_t i = _operator; i < cmd.size(); i++)

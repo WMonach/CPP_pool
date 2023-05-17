@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:55:08 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/05 16:17:15 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:35:40 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define RPN_HPP
 
 # include <iostream> 
+# include <algorithm>
 # include <string>
 # include <stack>
 # include <cstdlib>
@@ -21,7 +22,7 @@
 class	RPN {
 	
 	private:
-		std::stack<int> _operands;
+		std::stack<float> _operands;
 		void	operation( char c );
 		void	print_value( void );
 		
