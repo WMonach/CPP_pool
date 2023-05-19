@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:28:26 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/17 16:11:03 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:30:52 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ class Exception: public std::exception
         virtual char const * what() const throw() {
             return msg.c_str();
         };
-}
+};
 
 class  NotDigit: public Exception
 {   public:
@@ -77,10 +77,17 @@ class  NotDigit: public Exception
         }
 };
 
-class  : public Exception
+class  Repetition: public Exception
 {   public:
-        () {
-            this->msg += "";
+        Repetition() {
+            this->msg += "repetitive number";
+        }
+};
+
+class  TooHigh: public Exception
+{   public:
+        TooHigh() {
+            this->msg += "too large number";
         }
 };
 

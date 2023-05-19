@@ -6,11 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:28:58 by wmonacho          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/05/17 14:47:32 by wmonacho         ###   ########.fr       */
-=======
-/*   Updated: 2023/04/14 12:29:41 by will             ###   ########lyon.fr   */
->>>>>>> e038fe7130222e51ad2c7260270c9481f900a92c
+/*   Updated: 2023/05/19 14:32:04 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +30,7 @@ PmergeMe::~PmergeMe(void) {}
 void	PmergeMe::set(size_t nb)
 {
 	if (nb >= LONG_MAX)
-		throw (std::exception());
+		throw (TooHigh());
 	this->_vector.push_back(nb);
     this->_deque.push_back(nb);
 }
@@ -112,11 +108,7 @@ void	PmergeMe::insertionSortDeque(std::deque<size_t>& d, int left, int right)
     }
 }
 
-<<<<<<< HEAD
 void PmergeMe::mergeInsertSortDeque(std::deque<size_t>& d, int left, int right)
-=======
-void PmergeMe::mergeInsertSortDeque(std::deque<int>& d, int left, int right)
->>>>>>> e038fe7130222e51ad2c7260270c9481f900a92c
 {
     if (left >= right) 
 		return;
@@ -131,11 +123,7 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int>& d, int left, int right)
     std::inplace_merge(d.begin() + left, d.begin() + mid + 1, d.begin() + right + 1);
 }
 
-<<<<<<< HEAD
 void PmergeMe::sortDeque(std::deque<size_t>& d)
-=======
-void PmergeMe::sortDeque(std::deque<int>& d)
->>>>>>> e038fe7130222e51ad2c7260270c9481f900a92c
 {
     mergeInsertSortDeque(d, 0, d.size() - 1);
 	std::cout << "Deque Container After	: " ;

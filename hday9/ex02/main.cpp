@@ -6,11 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/05/17 14:44:11 by wmonacho         ###   ########.fr       */
-=======
-/*   Updated: 2023/04/14 12:36:02 by will             ###   ########lyon.fr   */
->>>>>>> e038fe7130222e51ad2c7260270c9481f900a92c
+/*   Updated: 2023/05/19 14:33:37 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +26,7 @@ void	checkDigit(int ac, char **av)
 			if (std::isdigit(static_cast<int>(av[i][j])))
 				j++;
 			else
-				throw (std::exception());
+				throw (NotDigit());
 		}
 		i++;
 	}	
@@ -56,7 +52,7 @@ void	checkRepetition(int ac, char **av)
 			if (std::strncmp(av[i], av[j], len) != 0)
 				continue;
 			else
-				throw (std::exception());
+				throw (Repetition());
 		}
 		i++;
 	}
@@ -68,14 +64,12 @@ void	print(PmergeMe &inst, int ac, char **av)
     std::deque<size_t> tmp_deque(inst.getDeque());
 	
 	struct timeval startVec, endVec;
-	float	vector_time;
-	float	deque_time;
-	
 	
 	std::cout << "Deque Container Before	: ";
 	for (int u = 0 ; u < ac; u++)
 		std::cout << av[u] << " ";
 	std::cout << std::endl;
+	gettimeofday(&startVec, NULL);
 	inst.sortVector(inst.getVector());
 	gettimeofday(&endVec, NULL);
 	struct timeval startDeq, endDeq;
@@ -126,7 +120,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		std::cout << "Error : must have at list two arguments" << std::endl;
+		std::cerr << "Error : must have at list two arguments" << std::endl;
 	}
 	return (0);
 }
