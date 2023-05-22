@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:55:08 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/17 13:35:40 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:48:52 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,48 @@ class InvalidChar : public ArgInvalid
             this->msg += "invalid char detected";
         }
 };
+
+class DivByZero : public ArgInvalid
+{   public:
+        DivByZero() {
+            this->msg += "invalid division";
+        }
+};
+
+class NotDigit : public ArgInvalid
+{   public:
+        NotDigit() {
+            this->msg += "not a digit or negative number";
+        }
+};
+
+class TooOpe : public ArgInvalid
+{   public:
+        TooOpe() {
+            this->msg += "too much operator";
+        }
+};
+
+class TooOpa : public ArgInvalid
+{   public:
+        TooOpa() {
+            this->msg += "too much operands";
+        }
+};
+
+class End : public ArgInvalid
+{   public:
+        End() {
+            this->msg += "Argument don't end with an operator";
+        }
+};
+
+class NoOperands : public ArgInvalid
+{   public:
+        NoOperands() {
+            this->msg += "No operands for operator";
+        }
+};
+
 
 #endif

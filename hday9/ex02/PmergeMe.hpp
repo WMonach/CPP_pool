@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:28:26 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/19 14:30:52 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:27:59 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,20 @@ class  TooHigh: public Exception
 {   public:
         TooHigh() {
             this->msg += "too large number";
+        }
+};
+
+class NegativeNumber: public Exception
+{   public:
+        NegativeNumber() {
+            this->msg += "negative number";
+        }
+};
+
+class  NullNumber: public Exception
+{   public:
+        NullNumber() {
+            this->msg += "null number";
         }
 };
 

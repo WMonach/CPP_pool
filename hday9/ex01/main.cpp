@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:54:34 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/17 13:35:12 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:46:52 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,20 @@ void	rnp(std::string cmd)
 	ope = countOccurrences(cmd, "+-*/");
 	operands = countOccurrences(cmd, "0123456789");
 	if (operands - ope > 1)
-		throw ArgInvalid();
+		throw TooOpa();
 	if (_operator == std::string::npos)
-        throw(ArgInvalid());
+        throw(TooOpe());
 	for (std::size_t i = _operator; i < cmd.size(); i++)
     {
         if ((i <= '9' && i >= '0') && ((i + 2) != '+'))
-            throw ArgInvalid();
+            throw NotDigit();
     }
 	for(std::string::iterator it = cmd.begin(); it != cmd.end(); ++it)
     {
         if ((*it == ' ' && it == cmd.end() - 1))
-            throw ArgInvalid();
+            throw End();
         if ((it == cmd.end() - 1) && operator_check(it) == false)
-            throw ArgInvalid();
+            throw End();
     }
 	value.calculate(cmd);
 }
@@ -72,6 +72,7 @@ int	main(int argc, char **argv)
 			catch (const std::exception& e) 
 			{
        			std::cerr << e.what() << std::endl;
+				break;
 			}
 		default :
 			std::cerr << "Wrong format" << std::endl;

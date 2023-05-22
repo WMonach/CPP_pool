@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:41:52 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/19 14:33:37 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:35:35 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ void	checkDigit(int ac, char **av)
 {
 	int	i = 0;
 	size_t	j;
+	std::string str;
 
-	std::cerr << "TEST" << std::endl;
 	while (i < ac)
 	{
 		j = 0;
+		str = av[i];
+		if (str.size() == 0)
+				throw(NullNumber());
 		while (j < std::strlen(av[i]))
 		{
+			if (static_cast<int>(av[i][j]) == 45)
+				throw (NegativeNumber());
 			if (std::isdigit(static_cast<int>(av[i][j])))
 				j++;
 			else

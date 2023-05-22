@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 16:54:09 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/05/17 11:29:03 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:01:07 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	BitcoinExchange::printBitcoin( std::string line)
 		return ;
 	}
 	space = line.substr(pipe + 3).find_first_not_of(" ");
-	std::cout << line.substr(pipe + 3 + space) << std::endl;
 	if (line.substr(pipe + 3 + space).find_first_not_of("0123456789.") != std::string::npos)
 	{
 		std::cout << "Error: bad value." << std::endl;
@@ -126,24 +125,15 @@ void	BitcoinExchange::databaseFeed(void)
 		exit(1);
 	}
 
-	/*delete first line wich is format type*/
-	// std::getline(database, line);
-	// line.clear();
-
 	while ( !(std::getline(database, line).eof()) )
 	{
 		coma = line.find(",");
 		this->bitcoin_rates[line.substr(0, coma)] = std::atof(line.substr(coma + 1, std::string::npos).c_str());
-		// line.clear();
 	}
-	//this->bitcoin_rates[line.substr(0, coma)] = 2;
-		// std::cout << this->bitcoin_rates[line.substr(0, coma)] << std::endl;
-	// database.close();
 }
 
 int	BitcoinExchange::checkMonth(int year, int month, int day)
 {
-	std::cout << "y :" << year << " m :" << month << " d :" << day << std::endl;
 	if (month == 2 && year % 4 != 0 && day > 28)
 		return (0);
 	else if ((month == 4 || month ==  6 || month == 9 || month == 11) && day > 30)

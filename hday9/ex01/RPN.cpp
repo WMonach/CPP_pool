@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:54:50 by wmonacho          #+#    #+#             */
-/*   Updated: 2023/04/07 13:30:39 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:48:41 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ RPN::RPN(RPN const &rhs)
 
 RPN	&RPN::operator=(RPN const &obj)
 {
-	if (this != &obj)
-	{
-	}
+	this->_operands = obj._operands;
 	return (*this);
 }
 
@@ -57,7 +55,7 @@ void	RPN::operation(char	c)
     	}
 	}
 	else
-        throw ArgInvalid();
+        throw NoOperands();
 }
 
 void	RPN::print_value( void )
@@ -78,7 +76,7 @@ void	RPN::calculate(std::string calculation)
 			if (_operands.size() < 2 || (_operands.top() == 0 && calculation[i] == '/'))
 			{
 				if (_operands.top() == 0 && calculation[i] == '/')
-				throw(ArgInvalid()); //WARNING wrong error
+				throw(DivByZero());
 			}
 			operation(calculation[i]);
 		}

@@ -6,7 +6,7 @@
 /*   By: wmonacho <wmonacho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:17:41 by will              #+#    #+#             */
-/*   Updated: 2023/05/17 10:38:01 by wmonacho         ###   ########.fr       */
+/*   Updated: 2023/05/22 13:36:15 by wmonacho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,24 @@ void	parsing(char *filename)
 	std::fstream	database;
 	std::string		line;
 	
+	database.open(filename, std::fstream::in | std::fstream::out);
 	if (!database.is_open())
-		database.open(filename, std::fstream::in | std::fstream::out);
-	if (database.is_open())
 	{
-		while ( !(std::getline(database, line).eof()) )
-		{
-			if (!line.compare("date | value"))
-				continue ;
-			data.printBitcoin(line);
-			line.clear();
-		}
-		if (line.size() > 0)
-		{
-			data.printBitcoin(line);
-			line.clear();
-		}
+		std::cerr << "ERROR: can't open file" << std::endl;
+		database.close();
+		return ;
 	}
-	else 
+	while ( !(std::getline(database, line).eof()) )
 	{
-		database.open(filename, std::fstream::in | std::fstream::out);
-		if (!database.is_open())
-		{
-			std::cout << "ERROR: can't open file" << std::endl;
-			database.close();
-			return ;
-		}
-		while ( !(std::getline(database, line).eof()) )
-		{
-			if (!line.compare("date | value"))
-				continue ;
-			data.printBitcoin(line);
-			line.clear();
-		}
-		if (line.size() > 0)
-		{
-			data.printBitcoin(line);
-			line.clear();
-		}
+		if (!line.compare("date | value"))
+			continue ;
+		data.printBitcoin(line);
+		line.clear();
+	}
+	if (line.size() > 0)
+	{
+		data.printBitcoin(line);
+		line.clear();
 	}
 	database.close();
 	return ;
